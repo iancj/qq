@@ -45,7 +45,7 @@ a{color: #000;}
 /*header*/
 .header {
     height: 50px;
-    padding: 0 5px;
+    padding: 0 10px;
     background-color: #18b4ed;
     color: #000;
     top: 0;
@@ -210,6 +210,7 @@ a{color: #000;}
     color: #fff;
     font-size:12px;
     margin: 6px 0 0 20px;
+    font-family: arial;
 }
 .msg-list .meta .num.bg-red{background:#f74c31}
 /*icons*/
