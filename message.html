@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<title>夏天</title>
+</head>
+<body>
+	<section id="message" class="page out">
+		<div class="content">
+			<a href="#index" data-rel="back">返回主页</a>
+			<button id="j-test">click</button>
+		</div>
+		
+		<script type="text/j-template" id="tpl_tooltips">
+			<div class="tooltips" style="display:none;">
+			    <span class="tooltips-arrow tooltips-arrow-<%= placement %>"><em>◆</em><i>◆</i></span>
+			    <%= content %>
+			</div>
+		</script>
+		<!-- end tooltips -->
+	</section>
+</body>
+</html>
