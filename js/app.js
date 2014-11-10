@@ -1,42 +1,51 @@
-//程序入口模块
+//主程序入口模块
 define(function(require,exports,module){
 	var Mobilebone=require("mobilebone"),
 		$=require("zepto"),
-		_=require("underscore"),
+		Chart=require("Chart");
 		FUN={};
 
-	FUN.message=require("module/message");
+	// FUN.message=require("module/message");
+	FUN.contact=require("module/contact");
+	// FUN.qzone=require("module/qzone");
 
-	//切换主页面的header
-	$(".j-footer-nav").click(function(){
-		var target=$(this).attr("href").replace(/#/,"");//切换的当前页面
-		$(".j-header-message,.j-header-contact,.j-header-qzone").hide();
-		$(".j-header-"+target).show();
-	})
-
+	//页面初始化
 	Mobilebone.onpagefirstinto = function(page_in) {
-		// console.log("onpagefirstinto")
 		FUN[page_in.id] && FUN[page_in.id].init(page_in)
 	};
 
+	//页面回调
 	Mobilebone.callback = function(pageinto, pageout) {
-
-		var header = document.querySelector("body > .header"), footer = document.querySelector("body > .footer");
+		var header = document.querySelector("body > .header"),
+			footer = document.querySelector("body > .footer");
 
 		// element of link at bottom
-		var ele_link_in = null, ele_link_out = null;
+		var ele_link_in = null,
+			ele_link_out = null;
+
 		// element of header
-		var ele_header_in = null, ele_header_out = null;
+		var ele_header_in = null,
+			ele_header_out = null;
+
+		var link;
+
 		if (pageinto) {
 			ele_link_in = footer.querySelector("a[href$="+ pageinto.id +"]");
 			ele_header_in = pageinto.querySelector(".header");
+			link=pageinto.id;
+
+			$(header).find("> div[data-link]").hide();
+			$(header).find("> div[data-link='"+link+"']").show();
+
 			if (pageout) {
 				ele_link_out = footer.querySelector("a[href$="+ pageout.id +"]");
 				ele_header_out = pageout.querySelector(".header");
+
 			} else if (ele_header_in == null) {
 				header.className = "header in";	
-				footer.className = "footer in";		
+				footer.className = "footer in";
 			}
+
 			if (ele_header_in == null) {
 				ele_link_in && ele_link_in.classList.add("active");
 				ele_link_out && ele_link_out.classList.remove("active");

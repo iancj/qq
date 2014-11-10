@@ -8,26 +8,26 @@
 	<link rel="stylesheet" href="css/qq.css">
 </head>
 <body>
-	<header class="header out clearfix" data-role="header">
-		<div class="header-left fl j-header-message">
+	<header class="header clearfix" data-role="header">
+		<div class="header-left fl" data-link="message">
 			<img src="images/headerPhoto.jpg" class="headerPhoto">
 		</div>
-		<div class="header-center j-header-message">
+		<div class="header-center" data-link="message">
 			<section class="messageChange">
 				<a href="javascript:;" class="active">消息</a><a href="javascript:;">通话</a>
 			</section>
 		</div>
-		<div class="header-right fr j-header-message"><i class="icon-headerArrowLeft"></i></div>
+		<div class="header-right fr" data-link="message"><i class="icon-headerArrowLeft"></i></div>
 		<!-- end message header -->
 
-		<div class="header-center j-header-contact" style="display:none;"><strong class="ftsize18">联系人</strong></div>
-		<div class="header-right fr j-header-contact" style="display:none;">
+		<div class="header-center" data-link="contact" style="display:none;"><strong class="ftsize18">联系人</strong></div>
+		<div class="header-right fr" data-link="contact" style="display:none;">
 			<a href="javascript:;" class="btn">添加</a>
 		</div>
 		<!-- end contact header -->
 
-		<div class="header-center j-header-qzone" style="display:none;"><strong class="ftsize18">动态</strong></div>
-		<div class="header-right fr j-header-qzone" style="display:none;">
+		<div class="header-center" data-link="qzone" style="display:none;"><strong class="ftsize18">动态</strong></div>
+		<div class="header-right fr" data-link="qzone" style="display:none;">
 			<a href="javascript:;" class="btn">管理</a>
 		</div>
 		<!-- end qzone header -->
@@ -112,6 +112,66 @@
 						</div>
 					</a>
 				</li>
+				<li>
+					<a href="#" class="bdbox clearfix">
+						<div class="photo fl">
+							<img src="images/msg_p5.jpg">
+						</div>
+						<div class="excerpt bdbox">
+							<strong class="name">Laurel</strong>
+							<p class="con">账号发来 先给你打100万</p>
+						</div>
+						<div class="meta fr">
+							<span class="time">15:54</span>
+							<span class="num bg-red">2</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="bdbox clearfix">
+						<div class="photo fl">
+							<img src="images/msg_p5.jpg">
+						</div>
+						<div class="excerpt bdbox">
+							<strong class="name">Laurel</strong>
+							<p class="con">账号发来 先给你打100万</p>
+						</div>
+						<div class="meta fr">
+							<span class="time">15:54</span>
+							<span class="num bg-red">2</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="bdbox clearfix">
+						<div class="photo fl">
+							<img src="images/msg_p5.jpg">
+						</div>
+						<div class="excerpt bdbox">
+							<strong class="name">Laurel</strong>
+							<p class="con">账号发来 先给你打100万</p>
+						</div>
+						<div class="meta fr">
+							<span class="time">15:54</span>
+							<span class="num bg-red">2</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="bdbox clearfix">
+						<div class="photo fl">
+							<img src="images/msg_p5.jpg">
+						</div>
+						<div class="excerpt bdbox">
+							<strong class="name">Laurel</strong>
+							<p class="con">账号发来 先给你打100万</p>
+						</div>
+						<div class="meta fr">
+							<span class="time">15:54</span>
+							<span class="num bg-red">2</span>
+						</div>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</section>
@@ -122,6 +182,7 @@
 			<div class="con-search">
 				<a href="javascript:;"><i class="icon-msg-search"></i>搜索</a>
 			</div>
+			<canvas id="myChart" width="310" height="200"></canvas>
 		</div>
 	</section>
 	<!-- end contact -->
@@ -133,22 +194,23 @@
 	</section>
 	<!-- end qzone -->
 
-	<footer class="footer out" data-role="footer">
+	<footer class="footer" data-role="footer">
 		<a href="#message" data-rel="auto" class="j-footer-nav"><i class="icon-footer msg"></i><p>消息</p></a>
 		<a href="#contact" data-rel="auto" class="j-footer-nav"><i class="icon-footer contact"></i><p>联系人</p></a>
 		<a href="#qzone" data-rel="auto" class="j-footer-nav"><i class="icon-footer qzone"></i><p>动态</p></a>
 	</footer>
 	<!-- end footer -->
 
-	<script src="js/sea.js"></script>
-	<script src="js/fastclick.js"></script>
+	<script src="js/plugins/sea.js"></script>
+	<script src="js/plugins/fastclick.js"></script>
 	<script>
 	seajs.config({
 		base:"./js/",
 		alias:{
-			"mobilebone":"mobilebone.js",
-			"zepto":"zepto-min.js",
-			"underscore":"underscore-min.js"
+			"mobilebone":"plugins/mobilebone.js",
+			"zepto":"plugins/zepto-min.js",
+			"underscore":"plugins/underscore-min.js",
+			"Chart":"plugins/Chart.min.js"
 		}
 	});
 
