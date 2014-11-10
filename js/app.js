@@ -2,7 +2,6 @@
 define(function(require,exports,module){
 	var Mobilebone=require("mobilebone"),
 		$=require("zepto"),
-		Chart=require("Chart");
 		FUN={};
 
 	// FUN.message=require("module/message");

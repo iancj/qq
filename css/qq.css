@@ -213,6 +213,73 @@ a{color: #000;}
     margin: 6px 0 0 20px;
 }
 .msg-list .meta .num.bg-red{background:#f74c31}
+/*msg-list-friendList*/
+.msg-list-friendList .excerpt .con{
+    font-size:12px;
+}
+.msg-list-friendList .photo{
+    width:38px;
+    height:38px;
+    overflow:hidden;
+    border-radius:38px;
+}
+.msg-list-friendList .excerpt{
+    padding:7px 50px 0 58px;
+}
+.msg-list-friendList .excerpt .name{
+    padding-bottom:2px;
+}
+/*contact*/
+.fastLinkList{
+    height:85px;
+    background:#fff;
+}
+.fastLinkList a{
+    display: block;
+    float:left;
+    font-size: 13px;
+    text-align: center;
+    width:25%;
+}
+
+.friendList .title{
+    padding-left:10px;
+    line-height:25px;
+    font-size:12px;
+    color: #808080;
+}
+.friendList dl{
+    background: #fff;
+}
+.friendList dl > dt{
+    position: relative;
+    height:44px;
+    line-height: 44px;
+    border-bottom:1px solid #c8c7cc;
+    font-size:15px;
+}
+
+.friendList dl > dt > .name{
+    display: block;
+    position: absolute;
+    padding:0 100px 0 45px;
+    left:0;
+    top:0;
+    width:100%;
+}
+.friendList dl > dt > .online-offline-num{
+    padding-right:10px;
+    font-size:12px;
+    color: #777;
+}
+.friendList dl > dd{
+    display: none;
+}
+.friendList dl.open > dd{
+    display: block;
+}
+
+
 /*icons*/
 .icon-headerArrowLeft{
     display: inline-block;
@@ -231,6 +298,13 @@ a{color: #000;}
     background-size:13px auto;
     vertical-align:-2px;
 }
+.icon-pc{
+    display:inline-block;
+    width:13px;
+    height:12px;
+    background:url(../images/pc.jpg) no-repeat;
+    background-size:13px auto;
+}
 
 .icon-footer{
     display: block;
@@ -243,7 +317,40 @@ a{color: #000;}
 .footer > a.active > .icon-footer.msg{background-position:0px 0px;}
 .footer > a.active > .icon-footer.contact{background-position:-120px 0px;}
 .footer > a.active > .icon-footer.qzone{background-position:-60px 0px;}
-
 .icon-footer.msg{background-position:-150px 0px;}
 .icon-footer.contact{background-position:-90px 0px;}
 .icon-footer.qzone{background-position:-30px 0px;}
+
+.icon-contact{
+    display:block;
+    width: 36px;
+    height: 36px;
+    margin:16px auto 8px;
+    background: url(../images/sprite_contact.png) no-repeat;
+    background-size: 144px auto;
+}
+.icon-contact.group{background-position:0px 0px;}
+.icon-contact.serve{background-position:-36px 0px;}
+.icon-contact.adrlist{background-position:-72px 0px;}
+.icon-contact.contacts{background-position:-108px 0px;}
+
+.icon-contactArrow{
+    position: absolute;
+    left:20px;
+    top: 50%;
+    margin-top:-5px;
+    display:block;
+    width: 10px;
+    height: 10px;
+    background: url(../images/contact_arrow.jpg) no-repeat;
+    background-size: 10px auto;
+    -webkit-transition:all 0.1s ease-in-out;
+    -o-transition:all 0.1s ease-in-out;
+    transition:all 0.1s ease-in-out;
+}
+.friendList dl.open > dt > .icon-contactArrow{
+    -webkit-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+    transform:rotate(90deg);
+}
