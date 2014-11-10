@@ -45,7 +45,7 @@ a{color: #000;}
 /*header*/
 .header {
     height: 50px;
-    padding: 0 5px;
+    padding: 0px 10px;
     background-color: #18b4ed;
     color: #000;
     top: 0;
@@ -153,53 +153,53 @@ a{color: #000;}
     color:#a7a7a7;
 }
 
-/*msg-list*/
-.msg-list{
+/*comm-list*/
+.comm-list{
     background:#fff;
 }
-.msg-list a{
+.comm-list a{
     position: relative;
     display: block;
-    padding:6px 10px;
+    padding: 6px 10px;
     border-bottom:1px solid #dedfe0;
 }
-.msg-list .photo{
+.comm-list .photo{
     width:50px;
     height:50px;
     overflow:hidden;
     border-radius:50px;
 }
-.msg-list .photo img{
+.comm-list .photo img{
     width: 100%;
     height: 100%;
 }
-.msg-list .excerpt{
+.comm-list .excerpt{
     position: absolute;
     top:0;
     left:0;
     width:100%;
     padding: 11px 50px 0 70px;
 }
-.msg-list .excerpt .name{
+.comm-list .excerpt .name{
     display:block;
     padding-bottom:5px;
     font-size:15px;
     color: #090909;
 }
-.msg-list .excerpt .con{
+.comm-list .excerpt .con{
     color: #808080;
     font-size:14px;
 }
-.msg-list .meta{
+.comm-list .meta{
     padding-top:3px;
     width:40px;
     text-align: right;
 }
-.msg-list .meta .time{
+.comm-list .meta .time{
     color: #ababab;
     font-size:12px;
 }
-.msg-list .meta .num{
+.comm-list .meta .num{
     display: block;
     width: 19px;
     height:19px;
@@ -212,22 +212,38 @@ a{color: #000;}
     font-size:12px;
     margin: 6px 0 0 20px;
 }
-.msg-list .meta .num.bg-red{background:#f74c31}
-/*msg-list-friendList*/
-.msg-list-friendList .excerpt .con{
+.comm-list .meta .num.bg-red{background:#f74c31}
+/*comm-list-friendList*/
+.comm-list-friendList .excerpt .con{
     font-size:12px;
 }
-.msg-list-friendList .photo{
+.comm-list-friendList .photo{
     width:38px;
     height:38px;
     overflow:hidden;
     border-radius:38px;
 }
-.msg-list-friendList .excerpt{
+.comm-list-friendList .excerpt{
     padding:7px 50px 0 58px;
 }
-.msg-list-friendList .excerpt .name{
+.comm-list-friendList .excerpt .name{
     padding-bottom:2px;
+}
+/*comm-list-qzone*/
+.comm-list-qzone{
+    margin-top:20px;
+    border-top: 1px solid #dedfe0;
+}
+.comm-list-qzone a{
+    padding:8px 10px;
+}
+.comm-list-qzone .excerpt{
+    padding: 14px 35px 0 48px;
+}
+.comm-list-qzone .photo{
+    width:28px;
+    height:28px;
+    border-radius:28px;
 }
 /*contact*/
 .fastLinkList{
@@ -241,6 +257,8 @@ a{color: #000;}
     text-align: center;
     width:25%;
 }
+.fastLinkList.num3 a{width:33.333333%;}
+.fastLinkList.num4 a{width:25%;}
 
 .friendList .title{
     padding-left:10px;
@@ -258,7 +276,6 @@ a{color: #000;}
     border-bottom:1px solid #c8c7cc;
     font-size:15px;
 }
-
 .friendList dl > dt > .name{
     display: block;
     position: absolute;
@@ -279,7 +296,9 @@ a{color: #000;}
     display: block;
 }
 
-
+.fastLinkList-qzone{
+    border-bottom:2px solid #e1e1e1;
+}
 /*icons*/
 .icon-headerArrowLeft{
     display: inline-block;
@@ -321,7 +340,8 @@ a{color: #000;}
 .icon-footer.contact{background-position:-90px 0px;}
 .icon-footer.qzone{background-position:-30px 0px;}
 
-.icon-contact{
+.icon-contact,
+.icon-qzone{
     display:block;
     width: 36px;
     height: 36px;
@@ -333,6 +353,16 @@ a{color: #000;}
 .icon-contact.serve{background-position:-36px 0px;}
 .icon-contact.adrlist{background-position:-72px 0px;}
 .icon-contact.contacts{background-position:-108px 0px;}
+
+.icon-qzone{
+    background: url(../images/sprite_qzone.png) no-repeat;
+    background-size: 111px auto;
+}
+
+.icon-qzone.qzone{background-position:0px 0px;width: 39px;}
+.icon-qzone.location{background-position:-39px 0px;}
+.icon-qzone.clan{background-position:-75px 0px;}
+
 
 .icon-contactArrow{
     position: absolute;
@@ -353,4 +383,16 @@ a{color: #000;}
     -ms-transform:rotate(90deg);
     -o-transform:rotate(90deg);
     transform:rotate(90deg);
+}
+
+.icon-commListArrow{
+    position: absolute;
+    top:50%;
+    right:10px;
+    margin-top:-7px;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url(../images/commListArrow.png) no-repeat;
+    background-size: 14px auto;
 }
