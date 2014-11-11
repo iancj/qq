@@ -4,8 +4,8 @@ define(function(require,exports,module){
 		$=require("zepto"),
 		FUN={};
 
-	// FUN.message=require("module/message");
 	FUN.contact=require("module/contact");
+	FUN.msg_detail=require("module/msg_detail");
 	// FUN.qzone=require("module/qzone");
 
 	//页面初始化
