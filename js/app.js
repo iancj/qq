@@ -66,6 +66,9 @@ define(function(require,exports,module){
 	// index.html
 	var $searchMask=$("#j-searchMask");//搜索内容遮罩
 
+	//自动计算遮罩真实高度
+	$searchMask.height($(window).height()-48);
+
 	//显示搜索容器
 	$(".j-showSearch").click(function(){
 		$(".header").addClass("con-search-transition outY");
