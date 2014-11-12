@@ -1,6 +1,6 @@
 // 对话
-define(function(require,exprots,module){
-	exprots.init=function(page){
+define(function(require,exports,module){
+	exports.init=function(page){
 		var _=require("underscore"),
 			reply={
 				1:"嗯哼？",

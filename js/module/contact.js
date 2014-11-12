@@ -1,6 +1,6 @@
 // 联系人
-define(function(require,exprots,module){
-	exprots.init=function(page){
+define(function(require,exports,module){
+	exports.init=function(page){
 		var $page=$(page);
 		
 		$page.find(".j-friendList dt").click(function(){

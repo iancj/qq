@@ -1,4 +1,14 @@
 /*msg_detail*/
+.header-center-msg-detail strong{
+    display: block;
+    padding-top: 5px;
+    line-height: normal;
+}
+.header-center-msg-detail .onlineType{
+    padding-top:1px;
+    font-size:12px;
+    font-weight:normal;
+}
 .content.content-msg-detail{
     bottom:50px;
     background:-webkit-linear-gradient(top,#ace7ef,#e7d9c5);
