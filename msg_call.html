@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-	<title>Laurel</title>
+	<title>通话详情</title>
 </head>
 <body>
 	<section id="msg_call" class="page out">
@@ -17,7 +17,6 @@
 			<div class="header-center">
 				<strong class="ftsize18">通话详情</strong>
 			</div>
-			<div class="header-right fr"><i class="icon-header arrowLeft"></i></div>
 		</header>
 		<!-- end header -->
 		<div class="content content-msg-call">
@@ -35,36 +34,41 @@
 				</li>
 				<li class="comm-list-con clc-msg-call-title bdbox clearfix">
 					<span class="fl ftsize14">通话历史</span>
-					<a href="javascript:;" class="fr ftsize14 clearAll">清除全部</a>
+					<a href="javascript:;" class="fr ftsize14 clearAll" id="j-clearAll">清除全部</a>
+				</li>
+				<li class="comm-list-con clc-msg-call-title bdbox" id="j-noHistory" style="display:none;">
+					<P class="txtCenter ftsize13 noHistory">无通话历史</P>
 				</li>
 			</ul>
 
-			<dl class="msg-call-history">
-				<dt>今天</dt>
-				<dd><span class="time">14:08</span><i class="icon-msg-call call_out"></i><span>[视频]</span><span>已取消</span></dd>
-				<dd><span class="time">09:50</span><i class="icon-msg-call call_out"></i><span>[视频]</span><span>已取消</span></dd>
-			</dl>
-			<dl class="msg-call-history">
-				<dt>星期六</dt>
-				<dd><span class="time">20:56</span><i class="icon-msg-call call_in"></i><span>[视频]</span><span>通话49秒钟</span></dd>
-			</dl>
-			<dl class="msg-call-history">
-				<dt>14-11-05</dt>
-				<dd><span class="time">20:56</span><i class="icon-msg-call call_in"></i><span>[视频]</span><span>通话1分25秒钟</span></dd>
-			</dl>
-			<dl class="msg-call-history">
-				<dt>14-11-03</dt>
-				<dd><span class="time">19:16</span><i class="icon-msg-call call_in"></i><span>[视频]</span><span>已在其它设备处理</span></dd>
-			</dl>
-			<dl class="msg-call-history">
-				<dt>14-10-23</dt>
-				<dd><span class="time">20:45</span><i class="icon-msg-call call_in"></i><span>[视频]</span><span>已在其它设备处理</span></dd>
-			</dl>
+			<section id="j-historyList">
+				<dl class="msg-call-history">
+					<dt>今天</dt>
+					<dd><span class="time">14:08</span><i class="icon-msg-call call_out"></i><span>[视频]</span><span>已取消</span></dd>
+					<dd><span class="time">09:50</span><i class="icon-msg-call call_out"></i><span>[视频]</span><span>已取消</span></dd>
+				</dl>
+				<dl class="msg-call-history">
+					<dt>星期六</dt>
+					<dd><span class="time">20:56</span><i class="icon-msg-call call_in"></i><span>[视频]</span><span>通话49秒钟</span></dd>
+				</dl>
+				<dl class="msg-call-history">
+					<dt>14-11-05</dt>
+					<dd><span class="time">20:56</span><i class="icon-msg-call call_in"></i><span>[视频]</span><span>通话1分25秒钟</span></dd>
+				</dl>
+				<dl class="msg-call-history">
+					<dt>14-11-03</dt>
+					<dd><span class="time">19:16</span><i class="icon-msg-call call_in"></i><span>[视频]</span><span>已在其它设备处理</span></dd>
+				</dl>
+				<dl class="msg-call-history">
+					<dt>14-10-23</dt>
+					<dd><span class="time">20:45</span><i class="icon-msg-call call_in"></i><span>[视频]</span><span>已在其它设备处理</span></dd>
+				</dl>	
+			</section>
 		</div>
 		<!-- end content -->
 		<footer class="footer footer-msg-call bdbox in clearfix" data-role="footer">
-			<a href="javascript:;" class="bdbox"><i class="icon-msg-call call_vedio2"></i>视频通话</a>
-			<a href="javascript:;" class="bdbox"><i class="icon-msg-call call_tel"></i>语音通话</a>
+			<a href="msg_call_makecall.html" class="bdbox"><i class="icon-msg-call call_vedio2"></i>视频通话</a>
+			<a href="msg_call_makecall.html" class="bdbox"><i class="icon-msg-call call_tel"></i>语音通话</a>
 		</footer>
 		<!-- end footer -->
 	</section>

@@ -18,7 +18,7 @@
     height: 50px;
     padding: 0px 10px;
     background-color: #18b4ed;
-    color: #000;
+    color: #fff;
     top: 0;
     z-index: 1;
 }
@@ -39,7 +39,6 @@
     line-height:50px;
     text-align: center;
     white-space: nowrap;
-    color:#fff;
     z-index:1;
 }
 
@@ -480,7 +479,7 @@
     display: inline-block;
     width: 13px;
     height: 22px;
-    background: url(../images/header_back.jpg) no-repeat;
+    background: url(../images/header_back.png) no-repeat;
     background-size: 13px auto;
     vertical-align:middle;
 }
