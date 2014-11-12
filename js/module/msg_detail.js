@@ -1,8 +1,8 @@
 // 对话
-define(function(require,exprots,module){
-	exprots.init=function(page){
+define(function(require,exports,module){
+	exports.init=function(page){
 		var _=require("underscore"),
-			replay={
+			reply={
 				1:"嗯哼？",
 				2:"然后呢？",
 				3:"是啊！",
@@ -34,7 +34,7 @@ define(function(require,exprots,module){
 				scrollListPanl($render);
 
 				//随机获取回复信息
-				html=_.template(tpl_left,{dataset:replay[_.random(1,5)]});
+				html=_.template(tpl_left,{dataset:reply[_.random(1,5)]});
 				$render=$(html);
 				setTimeout(function(){
 					$msg_list.append($render);
