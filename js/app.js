@@ -8,7 +8,7 @@ define(function(require,exports,module){
 	FUN.contact=require("module/contact");
 	FUN.msg_detail=require("module/msg_detail");
 	FUN.msg_call=require("module/msg_call");
-
+	
 	//页面初始化
 	Mobilebone.onpagefirstinto = function(page_in) {
 		FUN[page_in.id] && FUN[page_in.id].init(page_in)
