@@ -17,7 +17,7 @@ img{
     vertical-align:top;
 }
 a{color: #000;}
-input{outline:none;}
+input{outline:none;-webkit-appearance : none ;}
 
 .hide{display:none;}
 

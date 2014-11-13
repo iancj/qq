@@ -13,12 +13,25 @@
 .icon-msg-cmc.speaker{background-position:0px -47px;}
 .icon-msg-cmc.microphone{background-position:0px -80px;}
 
-#msg_call_makecall{
+.msg_call_makecall_bg{
+	position: absolute;
+	top:0;
+	left: 0;
+	width:100%;
+	height: 100%;
 	background:url(../images/bg_msg_call_makecall.jpg) no-repeat;
-	background-size:contain;
+	background-size: cover;
+	z-index: 1;
+}
+.msg_call_makecall_bg.blur{
+	-webkit-filter: blur(8px);
+       -moz-filter: blur(7px);   
+            filter: blur(7px);
+    z-index:2;
 }
 #msg_call_makecall .header{
 	background: none;
+	z-index:111;
 }
 #msg_call_makecall .header,
 #msg_call_makecall .header a{
@@ -27,7 +40,8 @@
 #msg_call_makecall .content{
 	top:0;
 	padding-top:50px;
-	background: rgba(0,0,0,0.7);
+	background: rgba(0,0,0,0.62);
+	z-index: 11;
 }
 .msg_cmc_photo{
 	width:95px;

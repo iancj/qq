@@ -3,6 +3,8 @@ define(function(require,exports,module){
 	exports.init=function(page){
 		var $page=$(page);
 
+		require("module/comm_search").init(page);//初始化搜索模块
+
 		//切换消息和通话tab
 		$(".header .j-msgTab").click(function(){
 			var panel=$(this).data("panel");
