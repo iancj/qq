@@ -1,0 +1,42 @@
+/*人脉圈*/
+.comm-list.comm-list-cttContacts .photo{
+	width: 38px;
+	height: 38px;
+	text-align: center;
+	border-radius:38px;
+}
+.comm-list.comm-list-cttContacts .excerpt{
+	padding: 9px 50px 0 60px;
+}
+.comm-list.comm-list-cttContacts .excerpt .name{
+	padding-bottom:1px;
+}
+#ctt_contacts .menuActions{
+	position: absolute;
+	width:100%;
+	left:0;
+	bottom:0;
+	padding:0 8px;
+	-webkit-transform:translateY(150px);
+    transform:translateY(150px);
+	-webkit-transition:all .2s ease-in-out;
+	-o-transition:all .2s ease-in-out;
+	transition:all .2s ease-in-out;
+}
+#ctt_contacts .menuActions.inY{
+	-webkit-transform:translateY(0);
+    transform:translateY(0);
+}
+#ctt_contacts .menuActions a{
+	margin-bottom:8px;
+}
+.icon-cttContacts{
+	display: inline-block;
+	width: 38px;
+	height: 38px;
+	background: url(../images/sprite_cttContacts.png) no-repeat;
+    background-size: 114px auto;
+}
+.icon-cttContacts.schoolmate{background-position:0px 0px;}
+.icon-cttContacts.friend{background-position:-38px 0px;}
+.icon-cttContacts.colleague{background-position:-76px 0px;}
