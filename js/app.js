@@ -9,6 +9,7 @@ define(function(require,exports,module){
 	FUN.msg_detail=require("module/msg_detail");
 	FUN.msg_call=require("module/msg_call");
 	FUN.ctt_contacts=require("module/ctt_contacts");
+	FUN.ctt_contacts_list=require("module/ctt_contacts_list");
 	
 	//页面初始化
 	Mobilebone.onpagefirstinto = function(page_in) {

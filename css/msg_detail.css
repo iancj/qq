@@ -22,7 +22,7 @@
     word-spacing: -4px;
 }
 .footer-msg-detail .input,
-.footer-msg-detail .btn,
+.footer-msg-detail .speaker,
 .footer-msg-detail i{
     display: inline-block;
     vertical-align:middle;
@@ -40,7 +40,7 @@
     font-size:14px;
     background: #fff;
 }
-.footer-msg-detail .btn{
+.footer-msg-detail .speaker{
     float:none;
     height:33px;
     width:15.555555%;
@@ -94,10 +94,10 @@
     box-shadow: 0 -3px 0 -1px #51a8e0 inset;
 }
 .msg-detail-list .left .msg{
-    margin-left:15px;
+    margin-left: 10px;
 }
 .msg-detail-list .right .msg{
-    margin-right:15px;
+    margin-right: 10px;
 }
 
 .icon-msg-detail-footer{
