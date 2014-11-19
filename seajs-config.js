@@ -11,4 +11,4 @@ seajs.config({
 });
 
 //development environment
-seajs.ISDEV=true;
+seajs.ISDEV=false;
