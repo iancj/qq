@@ -43,31 +43,6 @@ html, body, .page {
 	z-index: 9;
 }
 
-.loading{
-	position: absolute;
-	top:50%;
-	left:50%;
-	width:80px;
-	height: 80px;
-	margin:-40px 0 0 -40px;
-	background:rgba(0,0,0,0.7);
-	border-radius:10px;
-	text-align:center;
-	z-index:11;
-}
-
-.loading::after{
-	display:block;
-	content:" ";
-	width:65px;
-	height:65px;
-	margin: 7px auto 0;
-	background: url(../images/loading.png) center no-repeat;
-	background-size:45px auto;
-	-webkit-animation: loading 1s step-start infinite;
-	animation: loading 1s step-start infinite; 
-}
-
 /* Default animation - slide, you can visit '/test/transition/aniamte.css' to get more styles of animation */
 .slide.in {
 	-webkit-animation-name: slideinfromright;
