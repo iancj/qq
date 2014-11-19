@@ -3,9 +3,6 @@ define(function(require,exports,module){
 	exports.init=function(page){
 		var $page=$(page);
 
-		require("LoadCss");
-		seajs.use((seajs.ISDEV ? "./" : "")+"src/css/module/ctt_contacts.css");
-
 		require("../../component/search/search").init(page);//初始化搜索模块
 
 		var $menu=$page.find("#j-menuMask");//菜单

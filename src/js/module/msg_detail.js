@@ -1,9 +1,6 @@
 // 对话
 define(function(require,exports,module){
 	exports.init=function(page){
-		require("LoadCss");
-		seajs.use((seajs.ISDEV ? "./" : "")+"src/css/module/msg_detail.css");
-
 		var _=require("underscore"),
 			reply={
 				1:"嗯哼？",

@@ -64,12 +64,13 @@ module.exports = function(grunt) {
             }
         },
         cssmin:{
-            main:{
-                expand:true,
-                cwd: 'src/',
-                src: ['**/*.css'],
-                dest:"sea-modules/src/",
-                ext:".css"
+            main: {
+                files: {
+                    'sea-modules/src/css/app/app.css': [
+                        'src/css/reset.css',
+                        'src/css/module/*.css'
+                    ]
+                }
             }
         },
         imagemin: {
