@@ -1,0 +1,100 @@
+/*通话*/
+.icon-msg-cmc{
+	display: inline-block;
+	width: 33px;
+	height: 33px;
+	background:url(../../images/sprite_msg_cmc.png) no-repeat;
+	background-size:38px auto;
+	vertical-align:middle;
+}
+
+.icon-msg-cmc.finish{background-position:0px 0px;width: 38px;height: 14px;}
+.icon-msg-cmc.vedio{background-position:0px -14px;}
+.icon-msg-cmc.speaker{background-position:0px -47px;}
+.icon-msg-cmc.microphone{background-position:0px -80px;}
+
+.msg_call_makecall_bg{
+	position: absolute;
+	top:0;
+	left: 0;
+	width:100%;
+	height: 100%;
+	background:url(../../images/bg_msg_call_makecall.jpg) no-repeat;
+	background-size: cover;
+	z-index: 1;
+}
+.msg_call_makecall_bg.blur{
+	-webkit-filter: blur(8px);
+       -moz-filter: blur(7px);   
+            filter: blur(7px);
+    z-index:2;
+}
+#msg_call_makecall .header{
+	background: none;
+	z-index:111;
+}
+#msg_call_makecall .header,
+#msg_call_makecall .header a{
+	color: #b8bcc3
+}
+#msg_call_makecall .content{
+	top:0;
+	padding-top:50px;
+	background: rgba(0,0,0,0.62);
+	z-index: 11;
+}
+.msg_cmc_photo{
+	width:95px;
+	height: 95px;
+	border:2px solid #fbfbfb;
+	margin:57px auto 20px;
+	border-radius:95px;
+	overflow:hidden;
+}
+.msg_cmc_photo img{
+	width: 100%;
+	height: 100%;
+}
+.msg_cmc_name{
+	font-size:19px;
+	color: #bdc0c5;
+}
+.msg_cmc_ctrl{
+	position: absolute;
+	width:100%;
+	left:0;
+	bottom:80px;
+	text-align: center;
+}
+.msg_cmc_ctrl li{
+	display: inline-block;
+	text-align: center;
+	width:31.944444%;
+}
+.msg_cmc_ctrl li p{
+	padding-top:14px;
+	font-size:14px;
+	color: #646166;
+}
+.msg_cmc_ctrl a{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	line-height:60px;
+	border-radius:60px;
+	text-align: center;
+	overflow: hidden;
+	border:1px solid #56545a;
+}
+.msg_cmc_finishCall{
+	position: absolute;
+	left:50%;
+	bottom: 20px;
+	margin-left:-60px;
+	width: 120px;
+	height: 50px;
+	line-height: 50px;
+	background: #cb3730;
+	border-radius:25px;
+	text-align: center;
+}
