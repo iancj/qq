@@ -1,0 +1,1 @@
+define("src/js/module/msg_call_makecall",["seajs/seajs-css/1.0.4/seajs-css.js"],function(a,b){b.init=function(){a("seajs/seajs-css/1.0.4/seajs-css.js"),seajs.use((seajs.ISDEV?"./":"")+"src/css/module/msg_call_makecall.css")}});

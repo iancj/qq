@@ -1,0 +1,95 @@
+/*通话详情*/
+.icon-msg-call{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(../../images/sprite_msg_call.png) no-repeat;
+    background-size: 30px auto;
+    vertical-align:middle;
+}
+.icon-msg-call.call_vedio,
+.icon-msg-call.call_vedio2,
+.icon-msg-call.call_tel{
+    margin-left:10px;
+    width: 30px;
+    height: 30px;
+}
+.icon-msg-call.call_out,
+.icon-msg-call.call_in{
+    margin-right:5px;
+}
+.icon-msg-call.call_in{background-position:0px -12px;}
+.icon-msg-call.call_out{background-position:0px 0px;}
+.icon-msg-call.call_vedio2{background-position:0px -24px;}
+.icon-msg-call.call_vedio{background-position:0px -54px;}
+.icon-msg-call.call_tel{background-position:0px -84px;}
+
+.content.content-msg-call{
+	bottom:50px;
+}
+.comm-list .clc-msg-call-title{
+	line-height:40px;
+	border-bottom:0;
+}
+.comm-list .clc-msg-call-title a{
+	padding:0;
+	display:inline;
+	border:0;
+	color: #0079ff;
+}
+.comm-list .clc-msg-call-title .noHistory{
+	color: #808080;
+}
+.msg-call-history{
+	position: relative;
+	background:#fff;
+	font-size:13px;
+	padding:15px 0;
+	border-top:1px solid #cdcdcd;
+}
+.msg-call-history dt{
+	position: absolute;
+	top: -10px;
+	left:0;
+	display:inline-block;
+	padding: 3px 5px 3px 18px;
+	background: #fff;
+}
+.msg-call-history dd{
+	padding-left:30px;
+	padding-bottom:17px;
+	color: #808080;
+}
+.msg-call-history dd:last-child{
+	padding-bottom:0;
+}
+.msg-call-history dd span{
+	vertical-align:middle;
+	margin-right:10px;
+}
+.msg-call-history dd i{
+	margin-right:8px;
+}
+.msg-call-history dd .time{
+	margin-right:17px;
+}
+.footer-msg-call{
+	height:50px;
+	background:-webkit-linear-gradient(top,#f9f9f9,#e0e0e0);
+	background:-moz-linear-gradient(top,#f9f9f9,#e0e0e0);
+	background:linear-gradient(top,#f9f9f9,#e0e0e0);
+}
+.footer-msg-call a{
+	display: block;
+	width:50%;
+	text-align:center;
+	line-height:50px;
+	font-size:18px;
+	color: #00a5e0;
+}
+.footer-msg-call a:first-child{
+	border-right:1px solid #cdcdcd;
+}
+.footer-msg-call .icon-msg-call{
+	margin:0 5px 0 0;
+}
