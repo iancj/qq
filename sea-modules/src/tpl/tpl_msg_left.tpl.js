@@ -1,0 +1,1 @@
+define("src/tpl/tpl_msg_left.tpl",[],'<li class="left">\n	<section class="photo">\n		<img src="src/images/msg_p5.jpg" alt="">\n	</section>\n	<section class="msg"><%=dataset%></section>\n</li>');
