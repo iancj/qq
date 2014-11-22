@@ -4,7 +4,11 @@
 
 真的，饿妹子因~~~
 
-[Web手Q预览地址](http://iancj.github.io/qq)
+<a href="http://iancj.github.io/qq" target="_blank">[预览地址]</a>
+
+二维码地址：
+
+<img src="qrcode.png" width="140">
 
 #####2014-11-19 更新内容
 * 1.整理了文件
