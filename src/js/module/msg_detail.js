@@ -20,6 +20,9 @@ define(function(require,exports,module){
 			$content.scrollTop($msg_list.height())
 		}
 
+		var tpl=require("../../tpl/tpl_msg_left.tpl");
+		console.log(tpl)
+
 		//发送消息
 		$page.find("#j-sendMsg").keypress(function(event){
 			var key = window.event ? event.keyCode : event.which;

@@ -6,7 +6,7 @@ module.exports = function(grunt) {
             options: {
                 alias: '<%= pkg.spm.alias %>'
             },
-            component:{
+            component: {
                 options: {
                     idleading: 'src/component/'
                 },
@@ -26,6 +26,17 @@ module.exports = function(grunt) {
                     cwd: 'src/js/',
                     src: '**/*.js',
                     dest: '_build/js/'
+                }]
+            },
+            tpl: {
+                options: {
+                    idleading: 'src/tpl/'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'src/tpl/',
+                    src: '**/*.tpl',
+                    dest: '_build/tpl/'
                 }]
             }
         },
@@ -53,6 +64,17 @@ module.exports = function(grunt) {
                     dest: 'sea-modules/src/js/',
                     ext: '.js'
                 }]
+            },
+            tpl: {
+                options: {
+                    include: 'relative'
+                },
+                files: [{
+                    expand: true,
+                    cwd: '_build/tpl/',
+                    src: ['**/*.tpl.js'],
+                    dest: 'sea-modules/src/tpl/'
+                }]
             }
         },
         uglify: {
@@ -63,7 +85,7 @@ module.exports = function(grunt) {
                 dest: 'sea-modules/src'
             }
         },
-        cssmin:{
+        cssmin: {
             main: {
                 files: {
                     'sea-modules/src/css/app/app.css': [
@@ -85,9 +107,9 @@ module.exports = function(grunt) {
             }
         },
         clean: {
-            "beforeBuild":['sea-modules/src'],//构建之前先删除旧版文件
-            "build":['_build'],//transport临时目录
-            "noDebugJS":['sea-modules/src/**/*-debug.js']//js模块删除debug文件
+            "beforeBuild": ['sea-modules/src'], //构建之前先删除旧版文件
+            "build": ['_build'], //transport临时目录
+            "noDebugJS": ['sea-modules/src/**/*-debug.js','sea-modules/src/**/*-debug.tpl.js'] //删除debug文件
         }
     });
 
@@ -98,8 +120,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-    grunt.registerTask('default', ['clean:build','clean:noDebugJS']);
+    grunt.registerTask('default', ['clean:build', 'clean:noDebugJS']);
     grunt.registerTask('build-img', ['imagemin']);
     grunt.registerTask('build-css', ['cssmin']);
-    grunt.registerTask('build', ['clean:beforeBuild','transport','concat','uglify','cssmin','imagemin','clean:build','clean:noDebugJS']);
+    grunt.registerTask('build', ['clean:beforeBuild', 'transport', 'concat', 'uglify', 'cssmin', 'imagemin','clean:build','clean:noDebugJS']);
 };

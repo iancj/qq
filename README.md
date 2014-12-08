@@ -4,7 +4,14 @@
 
 真的，饿妹子因~~~
 
-[Web手Q预览地址](http://iancj.github.io/qq)
+<a href="http://iancj.github.io/qq" target="_blank">[预览地址]</a>
+
+二维码地址：
+
+<img src="qrcode.png" width="140">
+
+#####2014-11-24 更新内容
+移动端的webapp为了达到更好的效果，确实需要提前加载样式，尤其是单页应用这尤为重要。删除了`dev-async-css`和`dev-sync-css`这两个分支。
 
 #####2014-11-19 更新内容
 * 1.整理了文件
