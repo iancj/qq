@@ -5,13 +5,13 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 	<title>QQ</title>
 	<link rel="stylesheet" href="sea-modules/gallery/mobilebone/mobilebone-min.css">
-	<link rel="stylesheet" href="sea-modules/src/css/app/app.css">
-	<!-- <link rel="stylesheet" href="src/css/reset.css">
+	<!-- <link rel="stylesheet" href="sea-modules/src/css/app/app.css"> -->
+	<link rel="stylesheet" href="src/css/reset.css">
 	<link rel="stylesheet" href="src/css/module/index.css">
 	<link rel="stylesheet" href="src/css/module/ctt_contacts.css">
 	<link rel="stylesheet" href="src/css/module/msg_call.css">
 	<link rel="stylesheet" href="src/css/module/msg_call_makecall.css">
-	<link rel="stylesheet" href="src/css/module/msg_detail.css"> -->
+	<link rel="stylesheet" href="src/css/module/msg_detail.css">
 </head>
 <body>
 	<header class="header out clearfix" data-role="header">
@@ -42,122 +42,245 @@
 
 	<section id="message" class="page out" data-title="QQ">
 		<div class="content con-search-transition">
-			<section class="con-search">
-				<div class="realCon">
-					<div class="inputPn">
-						<input type="text" placeholder="搜索" class="input bdbox j-conSearchIpt">
-						<i class="icon-msg-search"></i>
-						<em class="clearTxt j-clearTxt">×</em>
+			<section>
+				<div class="pullDown j-pullDown" style="display:none;">下拉刷新</div>
+				<section class="con-search">
+					<div class="realCon">
+						<div class="inputPn">
+							<input type="text" placeholder="搜索" class="input bdbox j-conSearchIpt">
+							<i class="icon-msg-search"></i>
+							<em class="clearTxt j-clearTxt">×</em>
+						</div>
+						<a href="javascript:;" class="cancel j-hideSearch">取消</a>
 					</div>
-					<a href="javascript:;" class="cancel j-hideSearch">取消</a>
-				</div>
-				<a href="javascript:;" class="input imitateCon j-showSearch"><i class="icon-msg-search"></i>搜索</a>
-			</section>
+					<a href="javascript:;" class="input imitateCon j-showSearch"><i class="icon-msg-search"></i>搜索</a>
+				</section>
 
-			<section class="j-msgTabPn pn1">
-				<ul class="comm-list">
-					<li>
-						<a href="msg_detail.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p1.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">redky</strong>
-								<p class="con">二草：腾讯啥也搞</p>
-							</div>
-							<div class="meta fr">
-								<span class="time">15:54</span>
-								<span class="num">2</span>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="msg_detail.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p2.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">二海</strong>
-								<p class="con">群主说带了烤鸭过来</p>
-							</div>
-							<div class="meta fr">
-								<span class="time">15:54</span>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="msg_detail.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p3.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">腾讯新闻</strong>
-								<p class="con">小区紧挨靶场 楼梯密布弹孔</p>
-							</div>
-							<div class="meta fr">
-								<span class="time">11:11</span>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="msg_detail.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p4.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">我的电脑</strong>
-								<p class="con">[图片]</p>
-							</div>
-							<div class="meta fr">
-								<span class="time">15:51</span>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="msg_detail.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p5.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">Laurel</strong>
-								<p class="con">账号发来 先给你打100万</p>
-							</div>
-							<div class="meta fr">
-								<span class="time">15:54</span>
-								<span class="num bg-red">2</span>
-							</div>
-						</a>
-					</li>
-				</ul>
-			</section>
-			
-			<section class="j-msgTabPn pn2 hide">
-				<ul class="comm-list">
-					<li>
-						<a href="msg_call.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p5.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">Laurel</strong>
-								<p class="con"><i class="icon-msg-call call_in"></i>[视频] 星期日</p>
-							</div>
-							<div class="callType fr">2G <i class="icon-msg-call call_vedio"></i></div>
-						</a>
-					</li>
-					<li>
-						<a href="msg_call.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p1.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">Max</strong>
-								<p class="con"><i class="icon-msg-call call_out"></i>[视频] 星期一</p>
-							</div>
-							<div class="callType fr"><i class="icon-msg-call call_tel"></i></div>
-						</a>
-					</li>
-				</ul>
+				<section class="j-msgTabPn pn1">
+					<ul class="comm-list">
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p1.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">redky</strong>
+									<p class="con">二草：腾讯啥也搞</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+									<span class="num">2</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p2.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">二海</strong>
+									<p class="con">群主说带了烤鸭过来</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p3.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">腾讯新闻</strong>
+									<p class="con">小区紧挨靶场 楼梯密布弹孔</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">11:11</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p4.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">我的电脑</strong>
+									<p class="con">[图片]</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:51</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p5.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Laurel</strong>
+									<p class="con">账号发来 先给你打100万</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+									<span class="num bg-red">2</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p5.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Laurel</strong>
+									<p class="con">账号发来 先给你打100万</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+									<span class="num bg-red">2</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p5.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Laurel</strong>
+									<p class="con">账号发来 先给你打100万</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+									<span class="num bg-red">2</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p5.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Laurel</strong>
+									<p class="con">账号发来 先给你打100万</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+									<span class="num bg-red">2</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p5.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Laurel</strong>
+									<p class="con">账号发来 先给你打100万</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+									<span class="num bg-red">2</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p5.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Laurel</strong>
+									<p class="con">账号发来 先给你打100万</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+									<span class="num bg-red">2</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p5.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Laurel</strong>
+									<p class="con">账号发来 先给你打100万</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+									<span class="num bg-red">2</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p5.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Laurel</strong>
+									<p class="con">账号发来 先给你打100万</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+									<span class="num bg-red">2</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p5.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Laurel</strong>
+									<p class="con">账号发来 先给你打100万</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+									<span class="num bg-red">2</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</section>
+				
+				<section class="j-msgTabPn pn2 hide">
+					<ul class="comm-list">
+						<li>
+							<a href="msg_call.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p5.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Laurel</strong>
+									<p class="con"><i class="icon-msg-call call_in"></i>[视频] 星期日</p>
+								</div>
+								<div class="callType fr">2G <i class="icon-msg-call call_vedio"></i></div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_call.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p1.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Max</strong>
+									<p class="con"><i class="icon-msg-call call_out"></i>[视频] 星期一</p>
+								</div>
+								<div class="callType fr"><i class="icon-msg-call call_tel"></i></div>
+							</a>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 	</section>
