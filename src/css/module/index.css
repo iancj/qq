@@ -136,10 +136,20 @@
 .content {
     top: 50px;
     bottom: 62px;
-    overflow:auto;
+    width:100%;
 }
 .header + .content {
     bottom: 0;
+}
+
+.pullDown{
+    height: 40px;    
+    line-height: 40px;    
+    padding: 5px 10px;    
+    font-weight: bold;    
+    font-size: 14px;    
+    color: #888; 
+    text-align: center;
 }
 
 /*con-search*/

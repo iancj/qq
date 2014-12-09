@@ -1,8 +1,10 @@
 //主程序入口模块
 define(function(require,exports,module){
 	var Mobilebone=require("mobilebone"),
-		$=require("zepto"),
-		FUN={};
+		$=require("zepto");
+
+		IScroll=require("iscroll");
+		iScroll_config=require("./module/iscroll-config").config;
 	
 	//页面初始化
 	Mobilebone.onpagefirstinto = function(page_in) {
