@@ -1,1 +1,0 @@
-define("src/js/module/iscroll-config",[],function(a,b){b.config={click:!0,mouseWheel:!0,scrollbars:!0,probeType:2}});

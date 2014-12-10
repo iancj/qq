@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 	<title>QQ</title>
-	<link rel="stylesheet" href="sea-modules/gallery/mobilebone/mobilebone-min.css">
-	<!-- <link rel="stylesheet" href="sea-modules/src/css/app/app.css"> -->
+	<link rel="stylesheet" href="src/gallery/mobilebone/mobilebone-min.css">
+	<!-- <link rel="stylesheet" href="src/css/app/app.css"> -->
 	<link rel="stylesheet" href="src/css/reset.css">
 	<link rel="stylesheet" href="src/css/module/index.css">
 	<link rel="stylesheet" href="src/css/module/ctt_contacts.css">
@@ -493,11 +493,11 @@
 		<p class="txtCenter noResult j-noResult">对不起，无搜索结果</p>
 	</section>
 
-	<script src="sea-modules/seajs/seajs/2.3.0/sea.js" id="seajsnode"></script>
-	<script src="sea-modules/seajs/seajs-text/1.0.2/seajs-text.js"></script>
-	<script src="seajs-config.js"></script>
+	<script src="src/seajs/seajs/2.3.0/sea.js" id="seajsnode"></script>
+	<script src="src/seajs/seajs-text/1.0.2/seajs-text.js"></script>
+	<script src="src/seajs-config.js"></script>
 	<script>
-	seajs.use((seajs.ISDEV ? "./" : "")+"src/js/app.js");
+	seajs.use("app");
 	</script>
 </body>
 </html>

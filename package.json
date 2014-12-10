@@ -8,15 +8,18 @@
         "grunt-contrib-uglify": "^0.6.0",
         "grunt-contrib-clean": "^0.6.0",
         "grunt-contrib-cssmin": "^0.10.0",
-        "grunt-contrib-imagemin": "^0.9.2"
+        "grunt-contrib-imagemin": "^0.9.2",
+        "grunt-contrib-copy": "^0.7.0"
     },
     "spm": {
         "alias": {
-            "zepto":"gallery/zepto/zepto-min.js",
-            "mobilebone":"gallery/mobilebone/mobilebone-min.js",
-            "underscore":"gallery/underscore/1.6.0/underscore.js",
-            "iscroll":"gallery/iscroll/iscroll-probe.js",
-            "LoadCss":"seajs/seajs-css/1.0.4/seajs-css.js"
+            "zepto": "gallery/zepto/zepto-min.js",
+            "mobilebone": "gallery/mobilebone/mobilebone-min.js",
+            "underscore": "gallery/underscore/1.6.0/underscore.js",
+            "iscroll": "gallery/iscroll/iscroll-probe.js",
+            "LoadCss": "seajs/seajs-css/1.0.4/seajs-css.js",
+            "app": "js/app",
+            "comSearch": "component/search/search"
         }
     }
 }
