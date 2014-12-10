@@ -134,7 +134,7 @@
 
 /*content*/
 .content {
-    top: 50px;
+    top: 0;
     bottom: 62px;
     width:100%;
 }
@@ -142,14 +142,23 @@
     bottom: 0;
 }
 
+/*loadmore and refresh*/
+.loadmore,
 .pullDown{
-    height: 40px;    
-    line-height: 40px;    
-    padding: 5px 10px;    
+    height: 50px;    
+    line-height: 50px;    
     font-weight: bold;    
     font-size: 14px;    
     color: #888; 
     text-align: center;
+}
+.pullDown{
+    -webkit-transition:all 0.1s linear;
+    -o-transition:all 0.1s linear;
+    transition:all 0.1s linear;
+}
+.loadmore{
+    opacity:0;
 }
 
 /*con-search*/

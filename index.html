@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="src/css/module/msg_detail.css">
 </head>
 <body>
-	<header class="header out clearfix" data-role="header">
+	<header class="header clearfix" data-role="header">
 		<div class="header-left fl" data-link="message">
 			<img src="src/images/headerPhoto.jpg" class="headerPhoto">
 		</div>
@@ -42,7 +42,9 @@
 
 	<section id="message" class="page out" data-title="QQ">
 		<div class="content con-search-transition">
-			<section>
+			<section class="scroll">
+				<div class="pullDown j-pullDown">下拉刷新</div>
+
 				<section class="con-search">
 					<div class="realCon">
 						<div class="inputPn">
@@ -281,7 +283,7 @@
 					</ul>
 				</section>
 
-				<div class="pullDown j-pullDown" style="opacity:0">加载中...</div>
+				<div class="loadmore j-loadmore">加载中...</div>
 			</section>
 		</div>
 	</section>
@@ -482,7 +484,7 @@
 	</section>
 	<!-- end qzone -->
 
-	<footer class="footer out" data-role="footer">
+	<footer class="footer" data-role="footer">
 		<a href="#message" data-rel="auto" class="j-footer-nav"><i class="icon-footer msg"></i><p>消息</p></a>
 		<a href="#contact" data-rel="auto" class="j-footer-nav"><i class="icon-footer contact"></i><p>联系人</p></a>
 		<a href="#qzone" data-rel="auto" class="j-footer-nav"><i class="icon-footer qzone"></i><p>动态</p></a>
