@@ -1,5 +1,5 @@
 //development environment
-seajs.ISDEV=false;
+seajs.ISDEV=true;
 
 //seajs config
 seajs.config({
@@ -13,6 +13,7 @@ seajs.config({
 		"LoadCss":"seajs/seajs-css/1.0.4/seajs-css.js",
 		//module
 		"app":"js/app",
-		"comSearch":"component/search/search"
+		"comSearch":"component/search/search",
+		"comScroll":"component/scroll/scroll"
 	}
 });

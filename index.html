@@ -42,7 +42,7 @@
 
 	<section id="message" class="page out" data-title="QQ">
 		<div class="content con-search-transition">
-			<section>
+			<section class="scroll">
 				<div class="pullDown j-pullDown">下拉刷新</div>
 				<section class="con-search">
 					<div class="realCon">
@@ -281,6 +281,8 @@
 						</li>
 					</ul>
 				</section>
+
+				<input type="hidden" class="j-hasData" value="0">
 				<div class="loadmore j-loadmore">加载中...</div>
 			</section>
 		</div>
@@ -496,8 +498,10 @@
 	<script src="src/seajs/seajs/2.3.0/sea.js" id="seajsnode"></script>
 	<script src="src/seajs/seajs-text/1.0.2/seajs-text.js"></script>
 	<script src="src/seajs-config.js"></script>
+	<script src="src/gallery/fastclick/fastclick-min.js"></script>
 	<script>
 	seajs.use("app");
+	FastClick.attach(document.body);
 	</script>
 </body>
 </html>
