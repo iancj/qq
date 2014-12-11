@@ -141,7 +141,6 @@
 .header + .content {
     bottom: 0;
 }
-
 /*loadmore and refresh*/
 .loadmore,
 .pullDown{
@@ -161,7 +160,7 @@
     opacity:0;
 }
 .scroll{
-    min-height: 100.1%;
+    min-height: 100.2%;
 }
 /*con-search*/
 .con-search{
@@ -261,10 +260,14 @@
     transition:all 0.2s ease-in-out;
 }
 
-.content.top0,
+.content.top50{
+    top:50px;
+}
+
 .content.top0{
     top:0;
 }
+
 .header.outY{
     -webkit-transform:translateY(-50px);
     transform:translateY(-50px);
