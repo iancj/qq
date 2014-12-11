@@ -1,5 +1,5 @@
 //development environment
-seajs.ISDEV=false;
+seajs.ISDEV=true;
 
 //seajs config
 seajs.config({

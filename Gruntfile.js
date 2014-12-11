@@ -84,13 +84,6 @@ module.exports = function(grunt) {
                 cwd: 'dist',
                 src: ['**/*.js', '!**/*-debug.js'],
                 dest: 'dist'
-            },
-            seajsconfig: {
-                files: {
-                    'dist/seajs-config.js': [
-                        'src/seajs-config.js'
-                    ]
-                }
             }
         },
         cssmin: {

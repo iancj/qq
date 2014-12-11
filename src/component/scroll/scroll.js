@@ -36,7 +36,8 @@ define(function(require,exports,module){
         hasData=parseInt($page.find(".j-hasData").val());
 
         myScroll = new IScroll("#"+opts.page.id+" "+opts.selector, {
-            preventDefault:false,
+            click:true,
+            tap:true,
             mouseWheel: true,
             scrollbars: true,
             probeType:2
