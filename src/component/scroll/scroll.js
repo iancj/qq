@@ -13,10 +13,11 @@ define(function(require,exports,module){
 			myScroll,
 			defaults,
 			opts,
+            finalScrollY,//最后滚动的位置
 			$page,
             $loadMore,
             $pullDown,
-            $nowPanel,//当前容器
+            $pullDownHelper,
             hasData;//是否有更多数据
 
 		defaults={
@@ -29,13 +30,13 @@ define(function(require,exports,module){
 
 		opts=$.extend(true,{},defaults,options);
 
-		$page=$(opts.page);
+		$page=$(opts.selector);
         $loadMore=$page.find(".j-loadmore");
         $pullDown=$page.find(".j-pullDown");
-        $nowPanel=$page.find(opts.selector);
+        $pullDownHelper=$page.find(".j-pullDown-helper");
         hasData=parseInt($page.find(".j-hasData").val());
 
-        myScroll = new IScroll("#"+opts.page.id+" "+opts.selector, {
+        myScroll = new IScroll(opts.selector, {
             click:true,
             tap:true,
             mouseWheel: true,
@@ -45,16 +46,22 @@ define(function(require,exports,module){
 
         if(!opts.enableRefresh && !opts.enableLoadmore) return;
 
+        var finalScrollY=0;
+
         if(opts.enableRefresh){
             myScroll.on('scroll', function() {
+                if(this.y < 50){
+                    $pullDownHelper.height(this.y);
+                }
+
+                finalScrollY=this.y;
+
                 if (this.y > 50 && !$pullDown.hasClass('flip')) {
                     $pullDown.addClass("flip");
                     $pullDown.text('释放立即刷新...');
-                    $pullDown.css("paddingTop",this.y);
                 } else if (this.y < 50 && $pullDown.hasClass('flip')) {
                     $pullDown.removeClass("flip");
                     $pullDown.text('下拉刷新...');
-                    $pullDown.css("paddingTop",0);
                 }
             });
         }
@@ -65,24 +72,33 @@ define(function(require,exports,module){
                 $loadMore.css("opacity",1);
                 setTimeout(function(){
                     var tmp='<li>新增内容</li><li>新增内容</li><li>新增内容</li><li>新增内容</li><li>新增内容</li>';
-                    $nowPanel.find(".comm-list").empty().append(tmp);
+                    $page.find(".comm-list").empty().append(tmp);
                     myScroll.refresh();
                     $loadMore.css("opacity",0);
                 },1000);
             }
 
+            if(finalScrollY<50){
+                $pullDownHelper.animate({"height":0},100);
+            }
+
             if(opts.enableRefresh && $pullDown.hasClass('flip')){
                 $pullDown.addClass("pulldown-loading");
                 $pullDown.text("正在刷新...");
-                $nowPanel.find(".j-refreshPanel").load(opts.refreshUrl+"?v="+_.random(1,1000)+" .comm-list",function(data,status,xhr){
+                $page.find(".j-refreshPanel").load(opts.refreshUrl+"?v="+_.random(1,1000)+" .comm-list",function(data,status,xhr){
+                    var msg="";
+
                     if(status=="success"){
-                        $pullDown.text("刷新成功");
+                        msg="刷新成功";
                     }
                     else{
-                        $pullDown.text("刷新失败，请重试");
+                        msg="刷新失败，请重试";
                     }
+
+                    $pullDown.text(msg);
+
                     setTimeout(function(){
-                        $pullDown.css("paddingTop",0);
+                        $pullDownHelper.animate({"height":0},100);
                         $pullDown.removeClass("pulldown-loading");
                         myScroll.refresh();
                     },600);

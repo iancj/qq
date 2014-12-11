@@ -9,7 +9,7 @@ define(function(require, exports, module) {
         var scroll_pn1=comScroll.init({
             page:page,
             refreshUrl:"refresh_message.html",
-            selector:".j-msgTabPn.pn1"
+            selector:"#"+page.id+" .j-msgTabPn.pn1"
         });
 
         var scroll_pn2;
