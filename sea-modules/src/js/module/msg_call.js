@@ -1,1 +1,0 @@
-define("src/js/module/msg_call",[],function(a,b){b.init=function(a){var b=$(a);b.find("#j-clearAll").click(function(){return $("#j-noHistory").show().siblings(".clc-msg-call-title").hide(),$("#j-historyList").hide(),!1})}});

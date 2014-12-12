@@ -1,0 +1,1 @@
+define("js/module/ctt_contacts_list",["component/search/search"],function(a,b){b.init=function(b){a("component/search/search").init(b)}});

@@ -1,8 +1,8 @@
 //主程序入口模块
 define(function(require,exports,module){
-	var Mobilebone=require("mobilebone"),
-		$=require("zepto"),
-		FUN={};
+		Mobilebone=require("mobilebone");
+		$=require("zepto");
+		_=require("underscore");
 	
 	//页面初始化
 	Mobilebone.onpagefirstinto = function(page_in) {

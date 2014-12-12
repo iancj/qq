@@ -134,14 +134,30 @@
 
 /*content*/
 .content {
-    top: 50px;
+    top: 0;
     bottom: 62px;
-    overflow:auto;
+    width:100%;
 }
 .header + .content {
     bottom: 0;
 }
+/*loadmore and refresh*/
+.loadmore,
+.pullDown{
+    height: 50px;    
+    line-height: 50px;    
+    font-weight: bold;    
+    font-size: 14px;    
+    color: #888; 
+    text-align: center;
+}
 
+/*.loadmore{
+    opacity:0;
+}*/
+.scroll{
+    min-height: 100.25%;
+}
 /*con-search*/
 .con-search{
     width:100%;
@@ -240,10 +256,14 @@
     transition:all 0.2s ease-in-out;
 }
 
-.content.top0,
+.content.top50{
+    top:50px;
+}
+
 .content.top0{
     top:0;
 }
+
 .header.outY{
     -webkit-transform:translateY(-50px);
     transform:translateY(-50px);

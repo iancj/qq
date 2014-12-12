@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 	<title>QQ</title>
-	<link rel="stylesheet" href="sea-modules/gallery/mobilebone/mobilebone-min.css">
-	<link rel="stylesheet" href="sea-modules/src/css/app/app.css">
-	<!-- <link rel="stylesheet" href="src/css/reset.css">
+	<link rel="stylesheet" href="src/gallery/mobilebone/mobilebone-min.css">
+	<!-- <link rel="stylesheet" href="src/css/app/app.css"> -->
+	<link rel="stylesheet" href="src/css/reset.css">
 	<link rel="stylesheet" href="src/css/module/index.css">
 	<link rel="stylesheet" href="src/css/module/ctt_contacts.css">
 	<link rel="stylesheet" href="src/css/module/msg_call.css">
 	<link rel="stylesheet" href="src/css/module/msg_call_makecall.css">
-	<link rel="stylesheet" href="src/css/module/msg_detail.css"> -->
+	<link rel="stylesheet" href="src/css/module/msg_detail.css">
 </head>
 <body>
 	<header class="header out clearfix" data-role="header">
@@ -20,7 +20,7 @@
 		</div>
 		<div class="header-center" data-link="message">
 			<section class="messageChange">
-				<a href="javascript:;" class="j-msgTab active" data-panel="pn1">消息</a><a href="javascript:;" class="j-msgTab" data-panel="pn2">通话</a>
+				<a href="javascript:;" class="j-msgTab active" data-panel="pn1">消息</a><a href="javascript:;" class="j-msgTab pn2" data-panel="pn2">通话</a>
 			</section>
 		</div>
 		<div class="header-right fr" data-link="message"><i class="icon-header arrowLeft"></i></div>
@@ -41,319 +41,352 @@
 	<!-- end header -->
 
 	<section id="message" class="page out" data-title="QQ">
-		<div class="content con-search-transition">
-			<section class="con-search">
-				<div class="realCon">
-					<div class="inputPn">
-						<input type="text" placeholder="搜索" class="input bdbox j-conSearchIpt">
-						<i class="icon-msg-search"></i>
-						<em class="clearTxt j-clearTxt">×</em>
-					</div>
-					<a href="javascript:;" class="cancel j-hideSearch">取消</a>
-				</div>
-				<a href="javascript:;" class="input imitateCon j-showSearch"><i class="icon-msg-search"></i>搜索</a>
-			</section>
+		<div class="content con-search-transition j-msgTabPn pn1">
+			<section class="scroll">
+				<div class="j-pullDown-helper"></div>
+				<div class="pullDown j-pullDown">下拉刷新</div>
 
-			<section class="j-msgTabPn pn1">
-				<ul class="comm-list">
-					<li>
-						<a href="msg_detail.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p1.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">redky</strong>
-								<p class="con">二草：腾讯啥也搞</p>
-							</div>
-							<div class="meta fr">
-								<span class="time">15:54</span>
-								<span class="num">2</span>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="msg_detail.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p2.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">二海</strong>
-								<p class="con">群主说带了烤鸭过来</p>
-							</div>
-							<div class="meta fr">
-								<span class="time">15:54</span>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="msg_detail.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p3.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">腾讯新闻</strong>
-								<p class="con">小区紧挨靶场 楼梯密布弹孔</p>
-							</div>
-							<div class="meta fr">
-								<span class="time">11:11</span>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="msg_detail.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p4.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">我的电脑</strong>
-								<p class="con">[图片]</p>
-							</div>
-							<div class="meta fr">
-								<span class="time">15:51</span>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="msg_detail.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p5.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">Laurel</strong>
-								<p class="con">账号发来 先给你打100万</p>
-							</div>
-							<div class="meta fr">
-								<span class="time">15:54</span>
-								<span class="num bg-red">2</span>
-							</div>
-						</a>
-					</li>
-				</ul>
+				<section class="con-search">
+					<div class="realCon">
+						<div class="inputPn">
+							<input type="text" placeholder="搜索" class="input bdbox j-conSearchIpt">
+							<i class="icon-msg-search"></i>
+							<em class="clearTxt j-clearTxt">×</em>
+						</div>
+						<a href="javascript:;" class="cancel j-hideSearch">取消</a>
+					</div>
+					<a href="javascript:;" class="input imitateCon j-showSearch"><i class="icon-msg-search"></i>搜索</a>
+				</section>
+
+				<div class="j-refreshPanel">
+					<ul class="comm-list">
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p1.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">redky</strong>
+									<p class="con">二草：腾讯啥也搞</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+									<span class="num">2</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p2.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">二海</strong>
+									<p class="con">群主说带了烤鸭过来</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p3.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">腾讯新闻</strong>
+									<p class="con">小区紧挨靶场 楼梯密布弹孔</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">11:11</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p4.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">我的电脑</strong>
+									<p class="con">[图片]</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:51</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_detail.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p5.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Laurel</strong>
+									<p class="con">账号发来 先给你打100万</p>
+								</div>
+								<div class="meta fr">
+									<span class="time">15:54</span>
+									<span class="num bg-red">2</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<input type="hidden" class="j-hasData" value="0">
+				<!-- <div class="loadmore j-loadmore">加载中...</div> -->
 			</section>
-			
-			<section class="j-msgTabPn pn2 hide">
-				<ul class="comm-list">
-					<li>
-						<a href="msg_call.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p5.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">Laurel</strong>
-								<p class="con"><i class="icon-msg-call call_in"></i>[视频] 星期日</p>
-							</div>
-							<div class="callType fr">2G <i class="icon-msg-call call_vedio"></i></div>
-						</a>
-					</li>
-					<li>
-						<a href="msg_call.html" class="bdbox clearfix">
-							<div class="photo fl">
-								<img src="src/images/msg_p1.jpg">
-							</div>
-							<div class="excerpt bdbox">
-								<strong class="name">Max</strong>
-								<p class="con"><i class="icon-msg-call call_out"></i>[视频] 星期一</p>
-							</div>
-							<div class="callType fr"><i class="icon-msg-call call_tel"></i></div>
-						</a>
-					</li>
-				</ul>
+		</div>
+		<div class="content con-search-transition j-msgTabPn pn2" style="display:none;">
+			<section class="scroll">
+				<div class="j-pullDown-helper"></div>
+				<div class="pullDown j-pullDown">下拉刷新</div>
+
+				<section class="con-search">
+					<div class="realCon">
+						<div class="inputPn">
+							<input type="text" placeholder="搜索" class="input bdbox j-conSearchIpt">
+							<i class="icon-msg-search"></i>
+							<em class="clearTxt j-clearTxt">×</em>
+						</div>
+						<a href="javascript:;" class="cancel j-hideSearch">取消</a>
+					</div>
+					<a href="javascript:;" class="input imitateCon j-showSearch"><i class="icon-msg-search"></i>搜索</a>
+				</section>
+
+				<div class="j-refreshPanel">
+					<ul class="comm-list">
+						<li>
+							<a href="msg_call.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p5.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Laurel</strong>
+									<p class="con"><i class="icon-msg-call call_in"></i>[视频] 星期日</p>
+								</div>
+								<div class="callType fr">2G <i class="icon-msg-call call_vedio"></i></div>
+							</a>
+						</li>
+						<li>
+							<a href="msg_call.html" class="bdbox clearfix">
+								<div class="photo fl">
+									<img src="src/images/msg_p1.jpg">
+								</div>
+								<div class="excerpt bdbox">
+									<strong class="name">Max</strong>
+									<p class="con"><i class="icon-msg-call call_out"></i>[视频] 星期一</p>
+								</div>
+								<div class="callType fr"><i class="icon-msg-call call_tel"></i></div>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<input type="hidden" class="j-hasData" value="0">
+				<!-- <div class="loadmore j-loadmore">加载中...</div> -->
 			</section>
 		</div>
 	</section>
 	<!-- end message -->
 
 	<section id="contact" class="page out" data-title="QQ">
-		<div class="content con-search-transition">
-			<section class="con-search">
-				<div class="realCon">
-					<div class="inputPn">
-						<input type="text" placeholder="搜索" class="input bdbox j-conSearchIpt">
-						<i class="icon-msg-search"></i>
-						<em class="clearTxt j-clearTxt">×</em>
+		<div class="content con-search-transition top50">
+			<section class="scroll">
+				<section class="con-search">
+					<div class="realCon">
+						<div class="inputPn">
+							<input type="text" placeholder="搜索" class="input bdbox j-conSearchIpt">
+							<i class="icon-msg-search"></i>
+							<em class="clearTxt j-clearTxt">×</em>
+						</div>
+						<a href="javascript:;" class="cancel j-hideSearch">取消</a>
 					</div>
-					<a href="javascript:;" class="cancel j-hideSearch">取消</a>
-				</div>
-				<a href="javascript:;" class="input imitateCon j-showSearch"><i class="icon-msg-search"></i>搜索</a>
-			</section>
+					<a href="javascript:;" class="input imitateCon j-showSearch"><i class="icon-msg-search"></i>搜索</a>
+				</section>
 
-			<section class="fastLinkList clearfix num4">
-				<a href="ctt_contacts.html"><i class="icon-contact contacts"></i><p>人脉圈</p></a>
-				<a href="ctt_adrlist.html"><i class="icon-contact adrlist"></i><p>通讯录</p></a>
-				<a href="ctt_group.html"><i class="icon-contact group"></i><p>群组</p></a>
-				<a href="ctt_serve.html"><i class="icon-contact serve"></i><p>生活服务</p></a>
-			</section>
+				<section class="fastLinkList clearfix num4">
+					<a href="ctt_contacts.html"><i class="icon-contact contacts"></i><p>人脉圈</p></a>
+					<a href="ctt_adrlist.html"><i class="icon-contact adrlist"></i><p>通讯录</p></a>
+					<a href="ctt_group.html"><i class="icon-contact group"></i><p>群组</p></a>
+					<a href="ctt_serve.html"><i class="icon-contact serve"></i><p>生活服务</p></a>
+				</section>
 
-			<section class="friendList j-friendList">
-				<h3 class="title">好友分组</h3>
-				<dl>
-					<dt class="clearfix">
-						<i class="icon-contactArrow"></i>
-						<strong class="name bdbox">我的好友</strong>
-						<section class="online-offline-num fr">2/2</section>
-					</dt>
-					<dd>
-						<ul class="comm-list comm-list-friendList">
-							<li>
-								<a href="msg_detail.html" class="bdbox clearfix">
-									<div class="photo fl">
-										<img src="src/images/msg_p2.jpg">
-									</div>
-									<div class="excerpt bdbox">
-										<strong class="name">二海</strong>
-										<p class="con">[在线]群主说带了烤鸭过来</p>
-									</div>
-									<div class="meta fr">
-										<span class="time"><i class="icon-pc"></i></span>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="msg_detail.html" class="bdbox clearfix">
-									<div class="photo fl">
-										<img src="src/images/msg_p5.jpg">
-									</div>
-									<div class="excerpt bdbox">
-										<strong class="name">Laurel</strong>
-										<p class="con">[在线]账号发来 先给你打100万</p>
-									</div>
-									<div class="meta fr">
-										<span class="time"><i class="icon-pc"></i></span>
-									</div>
-								</a>
-							</li>
-						</ul>
-					</dd>
-				</dl>
-				<dl>
-					<dt class="clearfix">
-						<i class="icon-contactArrow"></i>
-						<strong class="name bdbox">二货们</strong>
-						<section class="online-offline-num fr">2/2</section>
-					</dt>
-					<dd>
-						<ul class="comm-list comm-list-friendList">
-							<li>
-								<a href="msg_detail.html" class="bdbox clearfix">
-									<div class="photo fl">
-										<img src="src/images/msg_p5.jpg">
-									</div>
-									<div class="excerpt bdbox">
-										<strong class="name">张恬</strong>
-										<p class="con">[在线]明天晚上杭州大酒店吃饭</p>
-									</div>
-									<div class="meta fr">
-										<span class="time"><i class="icon-pc"></i></span>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="msg_detail.html" class="bdbox clearfix">
-									<div class="photo fl">
-										<img src="src/images/msg_p1.jpg">
-									</div>
-									<div class="excerpt bdbox">
-										<strong class="name">RD</strong>
-										<p class="con">[在线]我给你们带了烤鸭</p>
-									</div>
-									<div class="meta fr">
-										<span class="time"><i class="icon-pc"></i></span>
-									</div>
-								</a>
-							</li>
-						</ul>
-					</dd>
-				</dl>
-				<dl>
-					<dt class="clearfix">
-						<i class="icon-contactArrow"></i>
-						<strong class="name bdbox">大学同学</strong>
-						<section class="online-offline-num fr">2/232</section>
-					</dt>
-					<dd>
-						<ul class="comm-list comm-list-friendList">
-							<li>
-								<a href="msg_detail.html" class="bdbox clearfix">
-									<div class="photo fl">
-										<img src="src/images/msg_p5.jpg">
-									</div>
-									<div class="excerpt bdbox">
-										<strong class="name">张恬</strong>
-										<p class="con">[在线]明天晚上杭州大酒店吃饭</p>
-									</div>
-									<div class="meta fr">
-										<span class="time"><i class="icon-pc"></i></span>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="msg_detail.html" class="bdbox clearfix">
-									<div class="photo fl">
-										<img src="src/images/msg_p1.jpg">
-									</div>
-									<div class="excerpt bdbox">
-										<strong class="name">RD</strong>
-										<p class="con">[在线]我给你们带了烤鸭</p>
-									</div>
-									<div class="meta fr">
-										<span class="time"><i class="icon-pc"></i></span>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="msg_detail.html" class="bdbox clearfix">
-									<div class="photo fl">
-										<img src="src/images/msg_p5.jpg">
-									</div>
-									<div class="excerpt bdbox">
-										<strong class="name">张恬</strong>
-										<p class="con">[在线]明天晚上杭州大酒店吃饭</p>
-									</div>
-									<div class="meta fr">
-										<span class="time"><i class="icon-pc"></i></span>
-									</div>
-								</a>
-							</li>
-						</ul>
-					</dd>
-				</dl>
+				<section class="friendList j-friendList">
+					<h3 class="title">好友分组</h3>
+					<dl>
+						<dt class="clearfix">
+							<i class="icon-contactArrow"></i>
+							<strong class="name bdbox">我的好友</strong>
+							<section class="online-offline-num fr">2/2</section>
+						</dt>
+						<dd>
+							<ul class="comm-list comm-list-friendList">
+								<li>
+									<a href="msg_detail.html" class="bdbox clearfix">
+										<div class="photo fl">
+											<img src="src/images/msg_p2.jpg">
+										</div>
+										<div class="excerpt bdbox">
+											<strong class="name">二海</strong>
+											<p class="con">[在线]群主说带了烤鸭过来</p>
+										</div>
+										<div class="meta fr">
+											<span class="time"><i class="icon-pc"></i></span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="msg_detail.html" class="bdbox clearfix">
+										<div class="photo fl">
+											<img src="src/images/msg_p5.jpg">
+										</div>
+										<div class="excerpt bdbox">
+											<strong class="name">Laurel</strong>
+											<p class="con">[在线]账号发来 先给你打100万</p>
+										</div>
+										<div class="meta fr">
+											<span class="time"><i class="icon-pc"></i></span>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt class="clearfix">
+							<i class="icon-contactArrow"></i>
+							<strong class="name bdbox">二货们</strong>
+							<section class="online-offline-num fr">2/2</section>
+						</dt>
+						<dd>
+							<ul class="comm-list comm-list-friendList">
+								<li>
+									<a href="msg_detail.html" class="bdbox clearfix">
+										<div class="photo fl">
+											<img src="src/images/msg_p5.jpg">
+										</div>
+										<div class="excerpt bdbox">
+											<strong class="name">张恬</strong>
+											<p class="con">[在线]明天晚上杭州大酒店吃饭</p>
+										</div>
+										<div class="meta fr">
+											<span class="time"><i class="icon-pc"></i></span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="msg_detail.html" class="bdbox clearfix">
+										<div class="photo fl">
+											<img src="src/images/msg_p1.jpg">
+										</div>
+										<div class="excerpt bdbox">
+											<strong class="name">RD</strong>
+											<p class="con">[在线]我给你们带了烤鸭</p>
+										</div>
+										<div class="meta fr">
+											<span class="time"><i class="icon-pc"></i></span>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt class="clearfix">
+							<i class="icon-contactArrow"></i>
+							<strong class="name bdbox">大学同学</strong>
+							<section class="online-offline-num fr">2/232</section>
+						</dt>
+						<dd>
+							<ul class="comm-list comm-list-friendList">
+								<li>
+									<a href="msg_detail.html" class="bdbox clearfix">
+										<div class="photo fl">
+											<img src="src/images/msg_p5.jpg">
+										</div>
+										<div class="excerpt bdbox">
+											<strong class="name">张恬</strong>
+											<p class="con">[在线]明天晚上杭州大酒店吃饭</p>
+										</div>
+										<div class="meta fr">
+											<span class="time"><i class="icon-pc"></i></span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="msg_detail.html" class="bdbox clearfix">
+										<div class="photo fl">
+											<img src="src/images/msg_p1.jpg">
+										</div>
+										<div class="excerpt bdbox">
+											<strong class="name">RD</strong>
+											<p class="con">[在线]我给你们带了烤鸭</p>
+										</div>
+										<div class="meta fr">
+											<span class="time"><i class="icon-pc"></i></span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="msg_detail.html" class="bdbox clearfix">
+										<div class="photo fl">
+											<img src="src/images/msg_p5.jpg">
+										</div>
+										<div class="excerpt bdbox">
+											<strong class="name">张恬</strong>
+											<p class="con">[在线]明天晚上杭州大酒店吃饭</p>
+										</div>
+										<div class="meta fr">
+											<span class="time"><i class="icon-pc"></i></span>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</section>
 			</section>
 		</div>
 	</section>
 	<!-- end contact -->
 
 	<section id="qzone" class="page out" data-title="QQ">
-		<div class="content">
-			<section class="fastLinkList fastLinkList-qzone clearfix num3">
-				<a href="#"><i class="icon-qzone qzone"></i><p>好友动态</p></a>
-				<a href="#"><i class="icon-qzone location"></i><p>附近</p></a>
-				<a href="#"><i class="icon-qzone clan"></i><p>兴趣部落</p></a>
-			</section>
+		<div class="content top50">
+			<section class="scroll">
+				<section class="fastLinkList fastLinkList-qzone clearfix num3">
+					<a href="#"><i class="icon-qzone qzone"></i><p>好友动态</p></a>
+					<a href="#"><i class="icon-qzone location"></i><p>附近</p></a>
+					<a href="#"><i class="icon-qzone clan"></i><p>兴趣部落</p></a>
+				</section>
 
-			<ul class="comm-list comm-list-qzone">
-				<li>
-					<a href="#" class="bdbox clearfix">
-						<div class="photo fl">
-							<img src="src/images/activity.png">
-						</div>
-						<div class="excerpt bdbox">
-							<strong class="name">群与活动</strong>
-						</div>
-						<i class="icon-commListArrow"></i>
-					</a>
-				</li>
-				<li>
-					<a href="#" class="bdbox clearfix">
-						<div class="photo fl">
-							<img src="src/images/yyb.png">
-						</div>
-						<div class="excerpt bdbox">
-							<strong class="name">应用宝</strong>
-						</div>
-						<i class="icon-commListArrow"></i>
-					</a>
-				</li>
-			</ul>
+				<ul class="comm-list comm-list-qzone">
+					<li>
+						<a href="#" class="bdbox clearfix">
+							<div class="photo fl">
+								<img src="src/images/activity.png">
+							</div>
+							<div class="excerpt bdbox">
+								<strong class="name">群与活动</strong>
+							</div>
+							<i class="icon-commListArrow"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="bdbox clearfix">
+							<div class="photo fl">
+								<img src="src/images/yyb.png">
+							</div>
+							<div class="excerpt bdbox">
+								<strong class="name">应用宝</strong>
+							</div>
+							<i class="icon-commListArrow"></i>
+						</a>
+					</li>
+				</ul>
+			</section>
 		</div>
 	</section>
 	<!-- end qzone -->
@@ -369,11 +402,13 @@
 		<p class="txtCenter noResult j-noResult">对不起，无搜索结果</p>
 	</section>
 
-	<script src="sea-modules/seajs/seajs/2.3.0/sea.js" id="seajsnode"></script>
-	<script src="sea-modules/seajs/seajs-text/1.0.2/seajs-text.js"></script>
+	<script src="src/seajs/seajs/2.3.0/sea.js" id="seajsnode"></script>
+	<script src="src/seajs/seajs-text/1.0.2/seajs-text.js"></script>
 	<script src="seajs-config.js"></script>
+	<!--<script src="src/gallery/fastclick/fastclick-min.js"></script>-->
 	<script>
-	seajs.use((seajs.ISDEV ? "./" : "")+"src/js/app.js");
+	seajs.use("app");
+	// FastClick.attach(document.body);
 	</script>
 </body>
 </html>

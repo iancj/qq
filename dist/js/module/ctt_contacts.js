@@ -1,0 +1,1 @@
+define("js/module/ctt_contacts",["component/search/search"],function(a,b){b.init=function(b){var c=$(b);a("component/search/search").init(b);var d=c.find("#j-menuMask");c.find("#j-showMenu").click(function(){d.fadeIn(100),d.find(".menuActions").addClass("inY")}),d.click(function(){d.find(".menuActions").removeClass("inY"),setTimeout(function(){d.fadeOut(100)},200)})}});

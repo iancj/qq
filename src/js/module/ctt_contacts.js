@@ -3,7 +3,7 @@ define(function(require,exports,module){
 	exports.init=function(page){
 		var $page=$(page);
 
-		require("../../component/search/search").init(page);//初始化搜索模块
+		require("comSearch").init(page); //搜索模块
 
 		var $menu=$page.find("#j-menuMask");//菜单
 

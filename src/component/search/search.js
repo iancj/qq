@@ -12,6 +12,7 @@ define(function(require,exports,module){
 
 		//显示搜索容器
 		$page.find(".j-showSearch").click(function(){
+			$page.find(".j-pullDown").hide();
 			$header.addClass("con-search-transition outY");
 			$(this).parents(".content").addClass("top0");
 			$(this).parents(".con-search").addClass("show").find(".j-conSearchIpt").focus();
@@ -23,6 +24,7 @@ define(function(require,exports,module){
 
 		//隐藏搜索容器
 		var hideSearch=function(){
+			$page.find(".j-pullDown").show();
 			$header.removeClass("outY");
 			$page.find(".content").removeClass("top0").find(".con-search").removeClass("show").find(".j-conSearchIpt").val("");
 			$searchMask.hide().find(".j-noResult").hide();

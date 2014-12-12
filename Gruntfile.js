@@ -4,11 +4,12 @@ module.exports = function(grunt) {
 
         transport: {
             options: {
+                paths:['src'],
                 alias: '<%= pkg.spm.alias %>'
             },
             component: {
                 options: {
-                    idleading: 'src/component/'
+                    idleading: 'component/'
                 },
                 files: [{
                     expand: true,
@@ -19,7 +20,7 @@ module.exports = function(grunt) {
             },
             js: {
                 options: {
-                    idleading: 'src/js/'
+                    idleading: 'js/'
                 },
                 files: [{
                     expand: true,
@@ -30,7 +31,7 @@ module.exports = function(grunt) {
             },
             tpl: {
                 options: {
-                    idleading: 'src/tpl/'
+                    idleading: 'tpl/'
                 },
                 files: [{
                     expand: true,
@@ -49,7 +50,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: '_build/component/',
                     src: ['**/*.js'],
-                    dest: 'sea-modules/src/component/',
+                    dest: 'dist/component/',
                     ext: '.js'
                 }]
             },
@@ -61,7 +62,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: '_build/js/',
                     src: ['**/*.js'],
-                    dest: 'sea-modules/src/js/',
+                    dest: 'dist/js/',
                     ext: '.js'
                 }]
             },
@@ -73,22 +74,22 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: '_build/tpl/',
                     src: ['**/*.tpl.js'],
-                    dest: 'sea-modules/src/tpl/'
+                    dest: 'dist/tpl/'
                 }]
             }
         },
         uglify: {
             main: {
                 expand: true,
-                cwd: 'sea-modules/src',
+                cwd: 'dist',
                 src: ['**/*.js', '!**/*-debug.js'],
-                dest: 'sea-modules/src'
+                dest: 'dist'
             }
         },
         cssmin: {
             main: {
                 files: {
-                    'sea-modules/src/css/app/app.css': [
+                    'dist/css/app/app.css': [
                         'src/css/reset.css',
                         'src/css/module/*.css'
                     ]
@@ -101,15 +102,28 @@ module.exports = function(grunt) {
                     expand: true, // Enable dynamic expansion
                     cwd: 'src/images/', // Src matches are relative to this path
                     src: ['**/*.{jpg,png,gif}'], // Actual patterns to match
-                    dest: 'sea-modules/src/images/', // Destination path prefix
+                    dest: 'dist/images/', // Destination path prefix
                     filter: "isFile"
                 }]
             }
         },
+        copy:{
+            main: {
+                files: [
+                    {
+                        expand: true, // Enable dynamic expansion
+                        cwd: 'src/', // Src matches are relative to this path
+                        src: ['gallery/**/*.*','seajs/**/*.*'], // Actual patterns to match
+                        dest: 'dist/', // Destination path prefix
+                        filter: "isFile"
+                    }
+                ]
+            }
+        },
         clean: {
-            "beforeBuild": ['sea-modules/src'], //构建之前先删除旧版文件
+            "beforeBuild": ['dist'], //构建之前先删除旧版文件
             "build": ['_build'], //transport临时目录
-            "noDebugJS": ['sea-modules/src/**/*-debug.js','sea-modules/src/**/*-debug.tpl.js'] //删除debug文件
+            "noDebugJS": ['dist/**/*-debug.js','dist/**/*-debug.tpl.js'] //删除debug文件
         }
     });
 
@@ -119,9 +133,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.registerTask('default', ['clean:build', 'clean:noDebugJS']);
     grunt.registerTask('build-img', ['imagemin']);
     grunt.registerTask('build-css', ['cssmin']);
-    grunt.registerTask('build', ['clean:beforeBuild', 'transport', 'concat', 'uglify', 'cssmin', 'imagemin','clean:build','clean:noDebugJS']);
+    grunt.registerTask('build-js', ['uglify']);
+    grunt.registerTask('build-copy', ['copy']);
+    grunt.registerTask('build', ['clean:beforeBuild', 'transport', 'concat', 'uglify', 'cssmin', 'imagemin','copy','clean:build','clean:noDebugJS']);
 };
