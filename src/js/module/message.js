@@ -8,7 +8,7 @@ define(function(require, exports, module) {
 
         var scroll_pn1=comScroll.init({
             page:page,
-            refreshUrl:"refresh_message.html",
+            refreshUrl:"refresh_message.html?v="+_.random(1,1000)+" .comm-list",
             selector:"#"+page.id+" .j-msgTabPn.pn1"
         });
 
@@ -29,6 +29,11 @@ define(function(require, exports, module) {
                     refreshUrl:"refresh_message2.html",
                     selector:".j-msgTabPn.pn2"
                 });
+            }
+
+            switch(panel){
+                case "pn1":scroll_pn1.refresh();break;
+                case "pn2":scroll_pn2.refresh();break;
             }
         });
     };

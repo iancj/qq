@@ -7,7 +7,7 @@ define(function(require,exports,module){
 
 		require("comScroll").init({
             page:page,
-            selector:".content",
+            selector:"#"+page.id+" .content",
             enableRefresh:false,
             enableLoadmore:false
         });
