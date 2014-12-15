@@ -78,6 +78,19 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        copy:{
+            main: {
+                files: [
+                    {
+                        expand: true, // Enable dynamic expansion
+                        cwd: 'src/', // Src matches are relative to this path
+                        src: ['gallery/**/*.*','seajs/**/*.*'], // Actual patterns to match
+                        dest: 'dist/', // Destination path prefix
+                        filter: "isFile"
+                    }
+                ]
+            }
+        },
         uglify: {
             main: {
                 expand: true,
@@ -87,7 +100,13 @@ module.exports = function(grunt) {
             }
         },
         cssmin: {
-            main: {
+            gallery: {
+                expand: true,
+                cwd: 'dist',
+                src: ['gallery/**/*.css'],
+                dest: 'dist'
+            },
+            app: {
                 files: {
                     'dist/css/app/app.css': [
                         'src/css/reset.css',
@@ -105,19 +124,6 @@ module.exports = function(grunt) {
                     dest: 'dist/images/', // Destination path prefix
                     filter: "isFile"
                 }]
-            }
-        },
-        copy:{
-            main: {
-                files: [
-                    {
-                        expand: true, // Enable dynamic expansion
-                        cwd: 'src/', // Src matches are relative to this path
-                        src: ['gallery/**/*.*','seajs/**/*.*'], // Actual patterns to match
-                        dest: 'dist/', // Destination path prefix
-                        filter: "isFile"
-                    }
-                ]
             }
         },
         clean: {
@@ -140,5 +146,5 @@ module.exports = function(grunt) {
     grunt.registerTask('build-css', ['cssmin']);
     grunt.registerTask('build-js', ['uglify']);
     grunt.registerTask('build-copy', ['copy']);
-    grunt.registerTask('build', ['clean:beforeBuild', 'transport', 'concat', 'uglify', 'cssmin', 'imagemin','copy','clean:build','clean:noDebugJS']);
+    grunt.registerTask('build', ['clean:beforeBuild', 'transport', 'concat', 'copy','uglify', 'cssmin', 'imagemin','clean:build','clean:noDebugJS']);
 };
