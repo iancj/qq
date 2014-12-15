@@ -4,7 +4,6 @@
  * @param options.page 当前的page
  * @param options.selector 当前的page
  * @param options.refreshUrl 刷新页面的url
- * @param options.pullDownHeight 下拉刷新dom的高度(默认50px)
  * @param options.enableRefresh 禁用下拉刷新
  * @param options.enableLoadmore 禁用加载更多
 */
@@ -14,12 +13,12 @@ define(function(require,exports,module){
 			myScroll,//存放iscroll返回的对象
 			defaults,//默认参数
 			opts,//合并后的蚕食
-            finalScrollY=0,//最后滚动的位置
             hasData,//是否有更多数据
             inFreshing=0,//当前是否处于刷新状态
             $page,//当前模块的dom
             $loadMore,//加载更多dom
             $pullDown,//下拉刷新dom
+            pullDownHeight,//下拉刷新dom高度
             $pullDownHelper;//下拉刷新辅助dom
 
         //设置默认参数
@@ -27,7 +26,6 @@ define(function(require,exports,module){
 			page:null,
             selector:"",
             refreshUrl:"",
-            pullDownHeight:50,
 			enableRefresh:true,
 			enableLoadmore:true
 		};
@@ -39,6 +37,7 @@ define(function(require,exports,module){
         $loadMore=$page.find(".j-loadmore");
         $pullDown=$page.find(".j-pullDown");
         $pullDownHelper=$page.find(".j-pullDown-helper");
+        pullDownHeight=$pullDown.height();
         hasData=parseInt($page.find(".j-hasData").val());
 
         //初始化
@@ -58,20 +57,14 @@ define(function(require,exports,module){
             myScroll.on('scroll', function() {
                 if(inFreshing) return;//如果正在刷新则对下拉不进行响应
 
-                //当前滚动的高度小于下拉刷新dom高度，则让下拉刷新辅助dom高度跟随变化
-                if(this.y < opts.pullDownHeight){
-                    $pullDownHelper.height(this.y);
-                }
-
-                //记录最后滚动的位置
-                finalScrollY=this.y;
-
-                if (this.y > opts.pullDownHeight && !$pullDown.hasClass('flip')) {
+                if (this.y > pullDownHeight && !$pullDown.hasClass('flip')) {
                     $pullDown.addClass("flip");
                     $pullDown.text('释放立即刷新...');
-                } else if (this.y < opts.pullDownHeight && $pullDown.hasClass('flip')) {
+                    this.minScrollY=pullDownHeight;
+                } else if (this.y < pullDownHeight && $pullDown.hasClass('flip')) {
                     $pullDown.removeClass("flip");
                     $pullDown.text('下拉刷新...');
+                    this.minScrollY=0;
                 }
             });
         }
@@ -85,11 +78,6 @@ define(function(require,exports,module){
                     $page.find(".comm-list").append(tmp);
                     myScroll.refresh();
                 },1000);
-            }
-
-            //滚动结束后，如果高度小于下拉刷新dom高度，则自动回弹到原位
-            if(finalScrollY<opts.pullDownHeight && !inFreshing){
-                $pullDownHelper.animate({"height":0},100);
             }
 
             if(opts.enableRefresh && $pullDown.hasClass('flip') && !inFreshing){
@@ -109,7 +97,7 @@ define(function(require,exports,module){
                     $pullDown.text(msg);
 
                     setTimeout(function(){
-                        $pullDownHelper.animate({"height":0},100);
+                        this.minScrollY=0;
                         $pullDown.removeClass("pulldown-loading");
                         myScroll.refresh();
                         inFreshing=0;
