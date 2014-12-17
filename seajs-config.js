@@ -14,6 +14,7 @@ seajs.config({
 		//module
 		"app":"js/app",
 		"comSearch":"component/search/search",
-		"comScroll":"component/scroll/scroll"
+		"comScroll":"component/scroll/scroll",
+		"comUtil":"component/util/util"
 	}
 });
