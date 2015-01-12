@@ -1,0 +1,1 @@
+define("component/util/util",["./util.css"],function(a,b,c){a("./util.css");var d={};d.hint=function(a){console.log(a)},d.loading={},d.loading.show=function(){console.log("show loading")},d.loading.hide=function(){console.log("hide loading")},c.exports=d});

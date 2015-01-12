@@ -1,11 +1,20 @@
 module.exports = function(grunt) {
+    var transport = require('grunt-cmd-transport');
+    var style = transport.style.init(grunt);
+    var text = transport.text.init(grunt);
+    var script = transport.script.init(grunt);
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
         transport: {
             options: {
                 paths:['src'],
-                alias: '<%= pkg.spm.alias %>'
+                alias: '<%= pkg.spm.alias %>',
+                parsers:{
+                    '.js' : [script.jsParser],
+                    '.tpl' : [text.html2jsParser]
+                }
             },
             component: {
                 options: {
@@ -14,7 +23,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src/component/',
-                    src: '**/*.js',
+                    src: ['**/*.js'],
                     dest: '_build/component/'
                 }]
             },
@@ -42,18 +51,6 @@ module.exports = function(grunt) {
             }
         },
         concat: {
-            component: {
-                options: {
-                    include: 'relative'
-                },
-                files: [{
-                    expand: true,
-                    cwd: '_build/component/',
-                    src: ['**/*.js'],
-                    dest: 'dist/component/',
-                    ext: '.js'
-                }]
-            },
             js: {
                 options: {
                     include: 'relative'
@@ -79,6 +76,15 @@ module.exports = function(grunt) {
             }
         },
         copy:{
+            component: {
+                files: [{
+                    expand: true,
+                    cwd: '_build/component/',
+                    src: ['**/*.js'],
+                    dest: 'dist/component/',
+                    ext: '.js'
+                }]
+            },
             main: {
                 files: [
                     {
@@ -106,6 +112,12 @@ module.exports = function(grunt) {
                 src: ['gallery/**/*.css'],
                 dest: 'dist'
             },
+            component: {
+                expand: true,
+                cwd: 'src',
+                src: ['component/**/*.css'],
+                dest: 'dist'
+            },
             app: {
                 files: {
                     'dist/css/app/app.css': [
@@ -116,7 +128,16 @@ module.exports = function(grunt) {
             }
         },
         imagemin: {
-            dynamic: { // Another target
+            component: { // Another target
+                files: [{
+                    expand: true, // Enable dynamic expansion
+                    cwd: 'src/component/', // Src matches are relative to this path
+                    src: ['**/*.{jpg,png,gif}'], // Actual patterns to match
+                    dest: 'dist/component/', // Destination path prefix
+                    filter: "isFile"
+                }]
+            },
+            main: { // Another target
                 files: [{
                     expand: true, // Enable dynamic expansion
                     cwd: 'src/images/', // Src matches are relative to this path
@@ -146,5 +167,6 @@ module.exports = function(grunt) {
     grunt.registerTask('build-css', ['cssmin']);
     grunt.registerTask('build-js', ['uglify']);
     grunt.registerTask('build-copy', ['copy']);
-    grunt.registerTask('build', ['clean:beforeBuild', 'transport', 'concat', 'copy','uglify', 'cssmin', 'imagemin','clean:build','clean:noDebugJS']);
+    grunt.registerTask('build-trans', ['clean:build','transport']);
+    grunt.registerTask('build', ['clean:beforeBuild', 'transport','concat', 'copy','uglify', 'cssmin', 'imagemin','clean:build','clean:noDebugJS']);
 };

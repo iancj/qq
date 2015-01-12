@@ -1,26 +1,27 @@
 {
-    "name": "webqq",
-    "version": "1.1.0",
-    "devDependencies": {
-        "grunt": "~0.4.2",
-        "grunt-cmd-transport": "^0.4.1",
-        "grunt-cmd-concat": "^0.2.7",
-        "grunt-contrib-uglify": "^0.6.0",
-        "grunt-contrib-clean": "^0.6.0",
-        "grunt-contrib-cssmin": "^0.10.0",
-        "grunt-contrib-imagemin": "^0.9.2",
-        "grunt-contrib-copy": "^0.7.0"
-    },
-    "spm": {
-        "alias": {
-            "zepto":"gallery/zepto/zepto-min.js",
-            "mobilebone":"gallery/mobilebone/mobilebone.js",
-            "underscore":"gallery/underscore/1.6.0/underscore.js",
-            "iscroll":"gallery/iscroll/iscroll-probe.js",
-            "LoadCss":"seajs/seajs-css/1.0.4/seajs-css.js",
-            "app":"js/app",
-            "comSearch":"component/search/search",
-            "comScroll":"component/scroll/scroll"
-        }
+  "name": "webqq",
+  "version": "1.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-cmd-transport": "^0.4.1",
+    "grunt-cmd-concat": "^0.2.7",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-imagemin": "^0.9.2",
+    "grunt-contrib-copy": "^0.7.0"
+  },
+  "spm": {
+    "alias": {
+      "zepto": "gallery/zepto/zepto-min.js",
+      "mobilebone": "gallery/mobilebone/mobilebone.js",
+      "underscore": "gallery/underscore/1.6.0/underscore.js",
+      "iscroll": "gallery/iscroll/iscroll-probe.js",
+      "LoadCss": "seajs/seajs-css/1.0.4/seajs-css.js",
+      "app": "js/app",
+      "comSearch": "component/search/search",
+      "comScroll": "component/scroll/scroll",
+      "comUtil": "component/util/util"
     }
+  }
 }
